@@ -1,2 +1,4 @@
-# ravencoinfoundation.github.io
-# ravencoinfoundation.github.io
+# Ravencoin Foundation Website 
+
+This powers the Ravencoin Foundation website.
+
