@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <script>
+      function getFileExtension(filename) {
+        return filename.split('.').pop();
+      } 
+
+      (async () => {
+        const response = await fetch('https://api.github.com/repos/RavencoinFoundation/ravencoinfoundation.github.io/contents/BoardMeetingMinutes');
+        const data = await response.json();
+        let htmlString = '<ul>';
+        for (let file of data) {
+          if (getFileExtension(file.name) == 'pdf') {
+            htmlString += `<li><a href="${file.name}">${file.name}</a></li>`;
+          }
+        }
+        htmlString += '</ul>';
+        document.getElementsByTagName('body')[0].innerHTML = htmlString;
+      })()
+    </script>
+  <body>
+</html>
