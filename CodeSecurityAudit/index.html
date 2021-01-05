@@ -6,7 +6,7 @@
       } 
 
       (async () => {
-        const response = await fetch('https://api.github.com/repos/RavencoinFoundation/ravencoinfoundation.github.io/contents/BoardMeetingMinutes');
+        const response = await fetch('https://api.github.com/repos/RavencoinFoundation/ravencoinfoundation.github.io/contents/CodeSecurityAudit');
         const data = await response.json();
         let htmlString = '<ul>';
         for (let file of data) {
