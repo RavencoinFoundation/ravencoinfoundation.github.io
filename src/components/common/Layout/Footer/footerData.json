@@ -1,10 +1,25 @@
 {
   "Download": [
-    { "text": "Windows", "link": "https://github.com/RavenProject/Ravencoin/releases/download/v4.3.2.1/raven-4.3.2.1-win64-setup-signed.exe" },
-    { "text": "Mac", "link": "https://github.com/RavenProject/Ravencoin/releases/download/v4.3.2.1/raven-4.3.2.1-osx-signed.dmg" },
-    { "text": "Linux", "link": "https://github.com/RavenProject/Ravencoin/releases/download/v4.3.2.1/raven-4.3.2.1-x86_64-linux-gnu.tar.gz" },
-    { "text": "iOS", "link": "https://itunes.apple.com/us/app/rvn-wallet/id1371751946?mt=8" },
-    { "text": "Android", "link": "https://play.google.com/store/apps/details?id=com.ravenwallet" }
+    {
+      "text": "Windows",
+      "link": "https://github.com/RavenProject/Ravencoin/releases/download/v4.3.2.1/raven-4.3.2.1-win64-setup-signed.exe"
+    },
+    {
+      "text": "Mac",
+      "link": "https://github.com/RavenProject/Ravencoin/releases/download/v4.3.2.1/raven-4.3.2.1-osx-signed.dmg"
+    },
+    {
+      "text": "Linux",
+      "link": "https://github.com/RavenProject/Ravencoin/releases/download/v4.3.2.1/raven-4.3.2.1-x86_64-linux-gnu.tar.gz"
+    },
+    {
+      "text": "iOS",
+      "link": "https://itunes.apple.com/us/app/rvn-wallet/id1371751946?mt=8"
+    },
+    {
+      "text": "Android",
+      "link": "https://play.google.com/store/apps/details?id=com.ravenwallet"
+    }
   ],
   "Asset Wallets": [
     { "text": "Ravencoin Core", "link": "www.example.com" },
@@ -13,22 +28,25 @@
   ],
   "RVN Wallets": [
     { "text": "Atomic Wallet", "link": "https://atomicwallet.io/" },
-    { "text": "Cobo.com", "https://cobo.com/" },
+    { "text": "Cobo.com", "link": "https://cobo.com/" },
     { "text": "Dcent", "link": "https://dcentwallet.com/" },
     { "text": "Dove Wallet", "link": "https://dovewallet.com/en" },
-    { "text": "Edge", "link": "https://edge.app/" },    
-    { "text": "Exodus", "link": "https://www.exodus.io/download/" },    
-    { "text": "Flare", "link": "https://flarewallet.io/" },    
-    { "text": "Guarda", "link": "https://guarda.com/" },    
-    { "text": "Ownbit", "link": "https://ownbit.io/en/" },    
-    { "text": "SafePay", "link": "https://safepay.safecoin.org/" },     
+    { "text": "Edge", "link": "https://edge.app/" },
+    { "text": "Exodus", "link": "https://www.exodus.io/download/" },
+    { "text": "Flare", "link": "https://flarewallet.io/" },
+    { "text": "Guarda", "link": "https://guarda.com/" },
+    { "text": "Ownbit", "link": "https://ownbit.io/en/" },
+    { "text": "SafePay", "link": "https://safepay.safecoin.org/" },
     { "text": "Trust Wallet", "link": "https://trustwallet.com/" },
     { "text": "More...", "link": "https://ravencoin.org/wallet/" }
   ],
   "Participate": [
     { "text": "Discord", "link": "https://discord.com/invite/jn6uhur" },
     { "text": "Telegram", "link": "https://t.me/RavencoinDev" },
-    { "text": "Facebook (RavencoinNest)", "link": "https://www.facebook.com/groups/RavenCoinNest" },
+    {
+      "text": "Facebook (RavencoinNest)",
+      "link": "https://www.facebook.com/groups/RavenCoinNest"
+    },
     { "text": "Mailing List", "link": "https://ravencoin.org/updates/" }
   ],
   "Buy RVN": [
@@ -43,11 +61,23 @@
     { "text": "BitLadon", "link": "https://www.bitladon.com/ravencoin" },
     { "text": "Bittrue", "link": "https://www.bitrue.com/trade/rvn_btc" },
     { "text": "Binance", "link": "https://www.binance.com/en/trade/RVN_BTC" },
-    { "text": "Bittrex", "link": "https://bittrex.com/Market/Index?MarketName=BTC-RVN" },
-    { "text": "Coinall", "link": "https://www.coinall.com/spot/trade#product=rvn_btc" },
+    {
+      "text": "Bittrex",
+      "link": "https://bittrex.com/Market/Index?MarketName=BTC-RVN"
+    },
+    {
+      "text": "Coinall",
+      "link": "https://www.coinall.com/spot/trade#product=rvn_btc"
+    },
     { "text": "Coinspot", "link": "https://www.coinspot.com.au/chart/RVN" },
-    { "text": "DEX Trade", "link": "https://dex-trade.com/spot/trading/RVNBTC" },
-    { "text": "Digifinex", "link": "https://www.digifinex.com/en-ww/trade/BTC/RVN" },
+    {
+      "text": "DEX Trade",
+      "link": "https://dex-trade.com/spot/trading/RVNBTC"
+    },
+    {
+      "text": "Digifinex",
+      "link": "https://www.digifinex.com/en-ww/trade/BTC/RVN"
+    },
     { "text": "Gazua", "link": "https://www.gazuaex.io/" },
     { "text": "Graviex", "link": "https://graviex.net/markets/rvnbtc" },
     { "text": "Indodax", "link": "https://indodax.com/market/RVNIDR" },
@@ -55,12 +85,21 @@
     { "text": "Paribu", "link": "https://www.paribu.com/" },
     { "text": "Sequoir", "link": "https://www.sequoir.com/" },
     { "text": "QBTC", "link": "https://www.qbtc.com/trade?symbol=RVN_USDT" },
-    { "text": "ProBit", "link": "https://www.probit.com/app/exchange/RVN-USDT" },
+    {
+      "text": "ProBit",
+      "link": "https://www.probit.com/app/exchange/RVN-USDT"
+    },
     { "text": "tZero", "link": "https://www.tzero.com/get-started" },
-    { "text": "UpBit", "link": "https://upbit.com/exchange?code=CRIX.UPBIT.BTC-RVN" }
+    {
+      "text": "UpBit",
+      "link": "https://upbit.com/exchange?code=CRIX.UPBIT.BTC-RVN"
+    }
   ],
   "Swap": [
-    { "text": "BC Bitcoin", "link": "https://www.bcbitcoin.co.uk/buy/?coin=RVN" },
+    {
+      "text": "BC Bitcoin",
+      "link": "https://www.bcbitcoin.co.uk/buy/?coin=RVN"
+    },
     { "text": "Bitni", "link": "https://bitni.com/swap/rvn/btc" },
     { "text": "ChangeAngel", "link": "https://changeangel.io/" },
     { "text": "ChangeNow", "link": "https://changenow.io/?from=btc&to=rvn" },
@@ -88,20 +127,31 @@
     { "text": "Blockchain Tiger", "link": "https://blockchaintiger.io/" }
   ],
   "Learn": [
-    { "text": "Whitepaper", "link": "https://ravencoin.org/assets/documents/Ravencoin.pdf" },
-    { "text": "Roadmap", "link": "https://github.com/RavenProject/Ravencoin/tree/master/roadmap" },
+    {
+      "text": "Whitepaper",
+      "link": "https://ravencoin.org/assets/documents/Ravencoin.pdf"
+    },
+    {
+      "text": "Roadmap",
+      "link": "https://github.com/RavenProject/Ravencoin/tree/master/roadmap"
+    },
     { "text": "Blog", "link": "https://blog.ravencoin.email/" },
     { "text": "Medium (@TronBlack)", "link": "https://medium.com/@tronblack" },
     { "text": "Wiki", "link": "https://raven.wiki/w/Ravencoin_Wiki" }
-  ],  
+  ],
   "Developers": [
-    { "text": "Ravencoin Github", "link": "https://github.com/RavenProject/Ravencoin" },
+    {
+      "text": "Ravencoin Github",
+      "link": "https://github.com/RavenProject/Ravencoin"
+    },
     { "text": "Block Explorer", "link": "https://api.ravencoin.org/" },
-    { "text": "Asset Explorer", "link": "https://ravencoin.asset-explorer.net/" },
+    {
+      "text": "Asset Explorer",
+      "link": "https://ravencoin.asset-explorer.net/"
+    },
     { "text": "Asset Explorer - 2", "link": "https://www.assetsexplorer.com/" },
     { "text": "Halving", "link": "https://ravencoin.org/halving/" },
     { "text": "Node Map", "link": "https://www.ravennodes.com/" },
     { "text": "DevKit", "link": "https://github.com/RavenDevKit" }
-  ] 
-
+  ]
 }
