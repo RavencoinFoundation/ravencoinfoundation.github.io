@@ -9,8 +9,14 @@ This powers the Ravencoin Foundation website.
 2.  **Install dependencies.**
 
 ```shell
+ brew install gatsby-cli
+ brew install yarn
+ ```
+
+```shell
  yarn
 ```
+
 
 3.  **Start developing.**
 
