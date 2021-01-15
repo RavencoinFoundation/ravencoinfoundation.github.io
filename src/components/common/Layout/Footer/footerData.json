@@ -126,7 +126,9 @@
     { "text": "Ravencoin.world", "link": "https://ravencoin.world/" },
     { "text": "Ravencoin Wiki", "link": "https://raven.wiki/w/Ravencoin_Wiki" },
     { "text": "RavenLand", "link": "https://ravenland.org/" },
-    { "text": "Blockchain Tiger", "link": "https://blockchaintiger.io/" }
+    { "text": "Blockchain Tiger", "link": "https://blockchaintiger.io/" },
+    { "text": "Ravencoin.org", "link": "https://ravencoin.org/"},   
+    { "text": "Ravencoin.org (Korean)", "link": "https://ravencoin.or.kr/"}
   ],
   "Learn": [
     {
