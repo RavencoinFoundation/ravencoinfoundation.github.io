@@ -7,6 +7,7 @@ import theme from "../utils/theme";
 import landingBgSm from "../images/landing-sm.png";
 import landingBgLg from "../images/landing-lg.png";
 import { Link } from "gatsby";
+import { Helmet } from "react-helmet"
 
 const StyledIndexPage = styled.div`
   flex-grow: 1;
@@ -158,6 +159,12 @@ const IndexPage = () => {
     <Layout>
       <StyledIndexPage>
         <Container>
+        <Helmet>
+            <title>Ravencoin Foundation</title>
+            <meta name="title" content="Ravencoin Foundation" />
+            <meta name="description" content="The Ravencoin Foundation supports the Ravencoin project." />
+            <meta name="google-site-verification" content="Pacm5C3ahyDFbNKYrhIWMQXNYnGquIYEE0_ma-BuFzg" />
+        </Helmet>        
           <header className="brand">
             <div className="icon-wrapper">
               <img src={ravenIcon} alt="Raven silhouette" />
