@@ -158,11 +158,6 @@ const IndexPage = () => {
     <Layout>
       <StyledIndexPage>
         <Container>
-        <Helmet>
-            <title>Ravencoin Foundation</title>
-            <meta name="title" content="Ravencoin Foundation" />
-            <meta name="description" content="The Ravencoin Foundation supports the Ravencoin project." />
-        </Helmet>
           <header className="brand">
             <div className="icon-wrapper">
               <img src={ravenIcon} alt="Raven silhouette" />
