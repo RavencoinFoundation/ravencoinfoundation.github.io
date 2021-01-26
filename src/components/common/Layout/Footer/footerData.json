@@ -150,6 +150,7 @@
       "link": "https://github.com/RavenProject/Ravencoin"
     },
     { "text": "Block Explorer", "link": "https://api.ravencoin.org/" },
+    { "text": "Blockbook Explorer", "link": "https://blockbook.ravencoin.org/" },
     {
       "text": "Asset Explorer",
       "link": "https://ravencoin.asset-explorer.net/"
