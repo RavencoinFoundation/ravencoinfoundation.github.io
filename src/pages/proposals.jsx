@@ -46,7 +46,7 @@ function Proposals() {
             <ul>
               {minutesData.map((file) => (
                 <li key={file.sha}>
-                  <a href="https://gateway.ravencoinipfs.com/ipfs/${file.name.split(".")[1]}">{file.name.split(".")[0]}</a>
+                  <a href="https://gateway.ravencoinipfs.com/ipfs/${file.name.split('.')[1]}">{file.name.split('.')[0]}</a>
                 </li>
               ))}
             </ul>
