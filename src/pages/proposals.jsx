@@ -16,6 +16,7 @@ const StyledProposals = styled.div`
 function Proposals() {
   const [minutesData, setMinutesData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const ipfsURL = "https://gateway.ravencoinipfs.com/ipfs/";
 
   useEffect(() => {
     async function fetchData() {
@@ -46,7 +47,7 @@ function Proposals() {
             <ul>
               {minutesData.map((file) => (
                 <li key={file.sha}>
-                  <a href=`https://gateway.ravencoinipfs.com/ipfs/${file.name.split('.')[1]}`>{file.name.split('.')[0]}</a>
+                  <a href={ipfsURL + file.name.split('.')[1]}>{file.name.split('.')[0]}</a>
                 </li>
               ))}
             </ul>
