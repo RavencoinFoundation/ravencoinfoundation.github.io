@@ -46,7 +46,7 @@ function Proposals() {
             <ul>
               {minutesData.map((file) => (
                 <li key={file.sha}>
-                  var fnameparts = var response = file.name.split(".");
+                  var fnameparts = file.name.split(".");
                   <a href="https://gateway.ravencoinipfs.com/ipfs/${fnameparts[1]}">{fnameparts[0]}</a>
                 </li>
               ))}
