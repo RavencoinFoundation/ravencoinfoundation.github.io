@@ -142,7 +142,8 @@
     },
     { "text": "Blog", "link": "https://blog.ravencoin.email/" },
     { "text": "Medium (@TronBlack)", "link": "https://medium.com/@tronblack" },
-    { "text": "Wiki", "link": "https://raven.wiki/w/Ravencoin_Wiki" }
+    { "text": "Wiki", "link": "https://raven.wiki/w/Ravencoin_Wiki" },
+    { "text": "Privacy", "link": "/privacy" }
   ],
   "Developers": [
     {
