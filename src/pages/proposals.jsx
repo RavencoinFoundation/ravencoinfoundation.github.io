@@ -41,6 +41,9 @@ function Proposals() {
       <StyledProposals>
         <Container>
           <h2>Proposals</h2>
+          <p>
+          If you&apos;re interested in taking on a proposal, e-mail <a href='mailto:contact@ravencoin.foundation'>contact@ravencoin.foundation</a> so it can be coordinated and we can avoid race conditions for the bounty.
+          </p>
           {isLoading ? (
             <p>Loading...</p>
           ) : (
