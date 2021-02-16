@@ -55,6 +55,9 @@ function Proposals() {
               ))}
             </ul>
           )}
+          <p>
+          See <a href='https://github.com/RavencoinFoundation/ravencoinfoundation.github.io/tree/main/Proposals'>instructions</a> for adding a proposal.
+          </p>
         </Container>
       </StyledProposals>
     </Layout>
