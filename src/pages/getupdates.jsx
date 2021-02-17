@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Layout from "../components/common/Layout";
 import theme from "../utils/theme";
 
-const StyledBlog = styled.div`
+const StyledGetUpdates = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,9 +22,9 @@ const StyledBlog = styled.div`
 function Community() {
   return (
     <Layout>
-      <StyledBlog>
-          <iframe src='https://blog.ravencoin.email/' width='100%' height='700'></iframe>
-      </StyledBlog>
+      <StyledGetUpdates>
+          <iframe height="400" width="100%" src="https://cdn.forms-content.sg-form.com/8ec7a872-d599-11e9-ada2-7a44cc589a29"></iframe>
+      </StyledGetUpdates>
     </Layout>
   );
 }
