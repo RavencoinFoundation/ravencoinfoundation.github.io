@@ -25,8 +25,9 @@ function Downloads() {
       <StyledDownloads>
         <Container>
           <h2 className="under-construction">
-            Downloads page is under construction.
+            Downloads are hosted on Ravencoin.org.
           </h2>
+          <a href='https://ravencoin.org/wallet/'>Downloads for Windows, Mac, Linux, iOS, Android</a>
         </Container>
       </StyledDownloads>
     </Layout>
