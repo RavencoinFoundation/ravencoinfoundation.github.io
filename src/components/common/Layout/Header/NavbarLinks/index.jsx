@@ -10,6 +10,7 @@ const NavbarLinks = ({ desktop }) => {
       <Link to="/downloads">Downloads</Link>
       <Link to="/community">Community</Link>
       <Link to="/whitepaper">Whitepaper</Link>
+      <Link to="/getupdates">Updates</Link>
     </Wrapper>
   );
 };

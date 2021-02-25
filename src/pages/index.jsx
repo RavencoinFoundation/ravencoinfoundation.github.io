@@ -176,10 +176,7 @@ const IndexPage = () => {
             </div>
           </header>
           <section className="info">
-            <p className="community">
-              A new community landing to assist the future of Ravencoin to soar.
-            </p>
-            <p className="coming-soon">Coming Soon</p>
+            <p className="coming-soon">Helping Ravencoin soar.</p>
           </section>
           <section className="resources">
             <h2>Resources</h2>
