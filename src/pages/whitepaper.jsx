@@ -23,9 +23,10 @@ function Whitepaper() {
     <Layout>
       <StyledWhitepaper>
         <Container>
-          <h2 className="under-construction">
-            Whitepaper page is under construction.
-          </h2>
+          <iframe frameBorder="0" scrolling="no"
+          width="1024" height="720"
+          src="https://ravencoin.org/assets/documents/Ravencoin.pdf">
+          </iframe>
         </Container>
       </StyledWhitepaper>
     </Layout>
