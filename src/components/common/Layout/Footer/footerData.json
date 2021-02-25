@@ -22,9 +22,10 @@
     }
   ],
   "Asset Wallets": [
-    { "text": "Ravencoin Core", "link": "www.example.com" },
-    { "text": "Mango Farm Assets", "link": "www.example.com" },
-    { "text": "Zelcore", "link": "https://zel.network/project/zelcore/" }
+    { "text": "Ravencoin Core (PC/Mac)", "link": "https://ravencoin.foundation/downloads" },
+    { "text": "Mango Farm Assets (web)", "link": "https://mangofarmassets.com/" },
+    { "text": "Zelcore", "link": "https://zel.network/project/zelcore/" },
+    { "text": "Stibits (Mobile iOS)", "link": "https://stibits.com/" }
   ],
   "RVN Wallets": [
     { "text": "Atomic Wallet", "link": "https://atomicwallet.io/" },
