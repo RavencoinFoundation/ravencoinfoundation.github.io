@@ -182,7 +182,7 @@ const IndexPage = () => {
           <section className="info">
             <p className="coming-soon">Helping Ravencoin soar.</p>
             <p className="subheader">
-              The Ravencoin Foundation is not Ravencoin. Ravencoin is open-source software that volunteers run to create a network of nodes that constructs a massively replicated blockchain-based ledger for RVN, and for any other asset tokens that get created by the network users.</p>
+              The Ravencoin Foundation is not Ravencoin. Ravencoin is <a href='https://github.com/RavenProject/Ravencoin'> open-source software</a> that volunteers run to create a network of nodes that constructs a massively replicated blockchain-based ledger for RVN, and for any other asset tokens that get created by the network users.</p>
             <p className="subheader">
               The Ravencoin Foundation is a non-profit organization that endeavors to assist and protect the Ravencoin open-source project. It also provides a legal entity that can hold and distribute development funds, apply for signing keys and certificates, hold App Store accounts, run Ravencoin explorers, run seed nodes, connect community members, and communicate a shared vision for the project.</p>
           </section>
