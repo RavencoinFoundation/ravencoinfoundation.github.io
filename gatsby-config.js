@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "My Test Site",
+    title: "Ravencoin Foundation",
   },
   plugins: [
     "gatsby-plugin-styled-components",
@@ -12,6 +12,13 @@ module.exports = {
         icon: "src/images/raven-icon-negative.png",
       },
     },
+    {
+      resolve: "gatsby-plugin-verify-brave",
+      options: {
+        token: "8cc1d44f1a7b13b875e60d1a4c7f0cf5f9b7858e83aef729bcccccfb5bf4352a",
+        domain: "ravencoin.foundation"
+      },
+    },        
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
