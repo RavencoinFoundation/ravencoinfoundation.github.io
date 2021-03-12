@@ -53,8 +53,14 @@ function Proposals() {
                   <a href={ipfsURL + file.name.split('.')[1]}>{file.name.split('.')[0]}</a>
                 </li>
               ))}
+
+              <li><a href='https://github.com/RavencoinFoundation/electrum-raven/issues/3'>Add asset support with hardware wallet signing</a></li>
+              <li><a href='https://github.com/RavenProject/Ravencoin/issues/883'>Fix for IP address list test</a></li>
+              <li><a href='https://github.com/RavenProject/Ravencoin/issues/880'>Add Sweep capability to Ravencoin Core</a></li>
             </ul>
           )}
+
+
           <p>
           See <a href='https://github.com/RavencoinFoundation/ravencoinfoundation.github.io/tree/main/Proposals'>instructions</a> for adding a proposal.
           </p>
