@@ -1,7 +1,7 @@
 An answer to who sent an asset or RVN
 
 ### The problem
-There is not a good way in the qt to show what wallet(by way of selected address) sent an asset or RVN
+There is not a good way in the qt to show what wallet sent an asset or RVN
 
 ### Potential solution
 Add ability(with an on an off switch that needs to be clicked when sending an asset) for wallet to set a signing address[or beacon] for assets/RVN sent from that wallet 
