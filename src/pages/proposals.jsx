@@ -24,7 +24,7 @@ const StyledProposals = styled.div`
 function Proposals() {
   return (
     <Layout>
-      <StyledAProposals>
+      <StyledProposals>
           <iframe src='https://docs.google.com/spreadsheets/d/1f1RTweLM8DbsmzUKVU_gub7ifvRIefy_M6pZqOaqcas/edit?usp=sharing' width='100%' height='700'></iframe>
       </StyledProposals>
     </Layout>
