@@ -24,6 +24,7 @@ const StyledProposals = styled.div`
 function Proposals() {
   return (
     <Layout>
+      <p>If you work on these, please email tron@ravencoin.foundation so the status can be changed to <strong>in-progress</strong> so we can avoid race-conditions and wasted efforts if two developers tackle the same code.</p>
       <StyledProposals>
           <iframe src='https://docs.google.com/spreadsheets/d/1f1RTweLM8DbsmzUKVU_gub7ifvRIefy_M6pZqOaqcas/edit?usp=sharing' width='100%' height='700'></iframe>
       </StyledProposals>
