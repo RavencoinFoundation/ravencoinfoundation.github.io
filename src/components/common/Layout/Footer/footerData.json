@@ -165,5 +165,10 @@
     { "text": "Halving", "link": "https://ravencoin.org/halving/" },
     { "text": "Node Map", "link": "https://www.ravennodes.com/" },
     { "text": "DevKit", "link": "https://github.com/RavenDevKit" }
+  ],
+  "Marketing": [
+    { "text": "Marketing Kit", "link": "https://github.com/underdarkskies/Ravencoin-Marketing" },
+    { "text": "YouTube Channel", "link": "https://www.youtube.com/channel/UCS7FnJO0lNroH7obhQDYNog" }
   ]
+
 }
