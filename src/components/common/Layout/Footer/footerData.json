@@ -147,6 +147,7 @@
     { "text": "Blog", "link": "https://blog.ravencoin.email/" },
     { "text": "Medium (@TronBlack)", "link": "https://medium.com/@tronblack" },
     { "text": "Wiki", "link": "https://raven.wiki/w/Ravencoin_Wiki" },
+    { "text": "Chain Stats", "link": "https://rvn.cryptoscope.io/stats/" },
     { "text": "Ecosystem Status", "link": "https://status.ravencoin.foundation/"},
     { "text": "Privacy", "link": "/privacy" }
   ],
