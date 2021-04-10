@@ -2,15 +2,15 @@
   "Download": [
     {
       "text": "Windows",
-      "link": "https://github.com/RavenProject/Ravencoin/releases/download/v4.3.2.1/raven-4.3.2.1-win64-setup-signed.exe"
+      "link": "https://github.com/RavenProject/Ravencoin/releases"
     },
     {
       "text": "Mac",
-      "link": "https://github.com/RavenProject/Ravencoin/releases/download/v4.3.2.1/raven-4.3.2.1-osx-signed.dmg"
+      "link": "https://github.com/RavenProject/Ravencoin/releases"
     },
     {
       "text": "Linux",
-      "link": "https://github.com/RavenProject/Ravencoin/releases/download/v4.3.2.1/raven-4.3.2.1-x86_64-linux-gnu.tar.gz"
+      "link": "https://github.com/RavenProject/Ravencoin/releases"
     },
     {
       "text": "iOS",
