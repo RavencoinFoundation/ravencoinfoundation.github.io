@@ -118,7 +118,7 @@
     { "text": "2Miners", "link": "https://2miners.com/rvn-mining-pool" },
     { "text": "Blocksmith", "link": "https://rvn.bsmith.io/" },
     { "text": "RavenMiner", "link": "https://www.ravenminer.com/" },
-    { "text": "SuprNova", "link": "https://rvn.suprnova.cc/index.php" },
+    { "text": "SuprNova", "link": "https://rvn.suprnova.cc/" },
     { "text": "NanoPool", "link": "https://rvn.nanopool.org/" },
     { "text": "MiningPoolHub", "link": "https://ravencoin.miningpoolhub.com/" },
     { "text": "WoolyPooly", "link": "https://woolypooly.com/#/coin/rvn" }
@@ -136,10 +136,7 @@
 
   ],
   "Learn": [
-    {
-      "text": "Whitepaper",
-      "link": "https://ravencoin.org/assets/documents/Ravencoin.pdf"
-    },
+    { "text": "Whitepaper", "link": "https://ravencoin.org/assets/documents/Ravencoin.pdf" },
     {
       "text": "Roadmap",
       "link": "https://github.com/RavenProject/Ravencoin/tree/master/roadmap"
@@ -152,16 +149,11 @@
     { "text": "Privacy", "link": "/privacy" }
   ],
   "Developers": [
-    {
-      "text": "Ravencoin Github",
-      "link": "https://github.com/RavenProject/Ravencoin"
-    },
+    { "text": "Ravencoin Github", "link": "https://github.com/RavenProject/Ravencoin" },
+    { "text": "Electrum RVN Github", "link": "https://github.com/Electrum-RVN-SIG" },
     { "text": "Block Explorer", "link": "https://api.ravencoin.org/" },
     { "text": "Blockbook Explorer", "link": "https://blockbook.ravencoin.org/" },
-    {
-      "text": "Asset Explorer",
-      "link": "https://ravencoin.asset-explorer.net/"
-    },
+    { "text": "Asset Explorer", "link": "https://ravencoin.asset-explorer.net/" },
     { "text": "Asset Explorer - 2", "link": "https://www.assetsexplorer.com/" },
     { "text": "Halving", "link": "https://ravencoin.org/halving/" },
     { "text": "Node Map", "link": "https://www.ravennodes.com/" },
