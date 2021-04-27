@@ -154,21 +154,23 @@
   ],
   "Developers": [
     {
-      "text": "Ravencoin Github",
-      "link": "https://github.com/RavenProject/Ravencoin"
-    },
-    { "text": "Block Explorer", "link": "https://api.ravencoin.org/" },
-    { "text": "Blockbook Explorer", "link": "https://blockbook.ravencoin.org/" },
-    {
-      "text": "Asset Explorer",
-      "link": "https://ravencoin.asset-explorer.net/"
-    },
-    { "text": "Asset Explorer - 2", "link": "https://www.assetsexplorer.com/" },
+      "text": "Ravencoin Github", "link": "https://github.com/RavenProject/Ravencoin"},
+    { "text": "Electrum Ravencoin", "link": "https://github.com/Electrum-RVN-SIG/electrum-ravencoin"},
+    { "text": "Rosetta API", "link": "https://github.com/ben-abraham/rosetta-ravencoin"},
     { "text": "Halving", "link": "https://ravencoin.org/halving/" },
     { "text": "Node Map", "link": "https://www.ravennodes.com/" },
+    { "text": "Asset Anatomy", "link": "https://hans-schmidt.github.io/mastering_ravencoin/analysis/Anatomy_of_a_Ravencoin_Asset_Transaction_Script.html" },
     { "text": "DevKit", "link": "https://github.com/RavenDevKit" }
   ],
-  "Marketing": [
+  "Explorers": [
+    { "text": "Block Explorer", "link": "https://api.ravencoin.org/" },
+    { "text": "Cryptoscope", "link": "https://rvn.cryptoscope.io/" },
+    { "text": "Ravencoin Explorer", "link": "https://ravencoin.network/" },
+    { "text": "Blockbook Explorer", "link": "https://blockbook.ravencoin.org/" },
+    { "text": "Asset Explorer", "link": "https://ravencoin.asset-explorer.net/" },
+    { "text": "Asset Explorer - 2", "link": "https://www.assetsexplorer.com/" }
+  ],  
+  "Awareness": [
     { "text": "Marketing Kit", "link": "https://github.com/underdarkskies/Ravencoin-Marketing" },
     { "text": "YouTube Channel", "link": "https://www.youtube.com/channel/UCS7FnJO0lNroH7obhQDYNog" }
   ]
