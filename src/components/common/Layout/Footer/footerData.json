@@ -160,6 +160,7 @@
     { "text": "Halving", "link": "https://ravencoin.org/halving/" },
     { "text": "Node Map", "link": "https://www.ravennodes.com/" },
     { "text": "Asset Anatomy", "link": "https://hans-schmidt.github.io/mastering_ravencoin/analysis/Anatomy_of_a_Ravencoin_Asset_Transaction_Script.html" },
+    { "text": "Foundation GitHub", "link": "https://github.com/RavencoinFoundation" },
     { "text": "DevKit", "link": "https://github.com/RavenDevKit" }
   ],
   "Explorers": [
