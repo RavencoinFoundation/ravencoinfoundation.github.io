@@ -44,10 +44,8 @@
   "Participate": [
     { "text": "Discord", "link": "https://discord.com/invite/jn6uhur" },
     { "text": "Telegram", "link": "https://t.me/RavencoinDev" },
-    {
-      "text": "Facebook (RavencoinNest)",
-      "link": "https://www.facebook.com/groups/RavenCoinNest"
-    },
+    { "text": "Facebook (RavencoinNest)", "link": "https://www.facebook.com/groups/RavenCoinNest" },
+    { "text": "RVNFT Art", "link": "https://www.rvnft.art" },
     { "text": "Mailing List", "link": "https://ravencoin.org/updates/" }
   ],
   "Buy RVN": [
