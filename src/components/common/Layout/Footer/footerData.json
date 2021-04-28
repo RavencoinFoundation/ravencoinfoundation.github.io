@@ -70,10 +70,8 @@
       "link": "https://www.coinall.com/spot/trade#product=rvn_btc"
     },
     { "text": "Coinspot", "link": "https://www.coinspot.com.au/chart/RVN" },
-    {
-      "text": "DEX Trade",
-      "link": "https://dex-trade.com/spot/trading/RVNBTC"
-    },
+    { "text": "DEX Trade", "link": "https://dex-trade.com/spot/trading/RVNBTC" },
+    { "text": "Gate.io", "link": "https://www.gate.io/en/trade/RVN_USDT" },
     {
       "text": "Digifinex",
       "link": "https://www.digifinex.com/en-ww/trade/BTC/RVN"
