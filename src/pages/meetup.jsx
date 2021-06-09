@@ -43,8 +43,9 @@ function Meetup() {
             <p>
             These massive cruise ships have <a href='https://www.carnival.com/internet-plans'>internet available</a> and are perfect for remote work, or just relax and join the on-board activities.  If our event is large enough, we can get <a href='https://www.carnivalmeetings.com/plan/corporate-events/'>additional support</a> from the cruise line.
             </p>
+            <p>
             <a href='https://www.carnival.com/booking/review?currency=USD&durDays=8&embkCode=MIA&isMilitary=N&isOver55=N&isPastGuest=N&itinCode=SCW&locality=1&numGuests=2&qbMetaCode=IS&qbPrice=654&qbRateCode=PSV&sailDate=11132021&sailingID=91434&shipCode=HZ&subRegionCode=CS&country=US'><img src={meetupimg}><a>
-
+            </p>
         </Container>
       </StyledMeetup>
     </Layout>
