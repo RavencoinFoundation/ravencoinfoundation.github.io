@@ -39,9 +39,9 @@ function Meetup() {
             </p>
 
             <p>
-            <strong>Where:</strong> Aboard the Carnival Horizon
-            <strong>When:</strong> Nov 13, 2021 - Nov 21, 2021
-            <strong>Who:</strong> The Ravencoin community.  That is you.
+            <strong>Where:</strong> Aboard the Carnival Horizon<br />
+            <strong>When:</strong> Nov 13, 2021 - Nov 21, 2021<br />
+            <strong>Who:</strong> The Ravencoin community.  That is you.<br />
             <a href='https://www.carnival.com/booking/review?currency=USD&durDays=8&embkCode=MIA&isMilitary=N&isOver55=N&isPastGuest=N&itinCode=SCW&locality=1&numGuests=2&qbMetaCode=IS&qbPrice=654&qbRateCode=PSV&sailDate=11132021&sailingID=91434&shipCode=HZ&subRegionCode=CS&country=US'>Book Now</a>
             </p>    
 
