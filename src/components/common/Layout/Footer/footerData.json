@@ -44,10 +44,9 @@
   "Participate": [
     { "text": "Discord", "link": "https://discord.com/invite/jn6uhur" },
     { "text": "Telegram", "link": "https://t.me/RavencoinDev" },
-    {
-      "text": "Facebook (RavencoinNest)",
-      "link": "https://www.facebook.com/groups/RavenCoinNest"
-    },
+    { "text": "Facebook (RavencoinNest)", "link": "https://www.facebook.com/groups/RavenCoinNest" },
+    { "text": "RVNFT Art", "link": "https://www.rvnft.art" },
+    { "text": "NVRMOR", "link": "https://www.nvrmor.io/" },
     { "text": "Mailing List", "link": "https://ravencoin.org/updates/" }
   ],
   "Buy RVN": [
@@ -71,10 +70,8 @@
       "link": "https://www.coinall.com/spot/trade#product=rvn_btc"
     },
     { "text": "Coinspot", "link": "https://www.coinspot.com.au/chart/RVN" },
-    {
-      "text": "DEX Trade",
-      "link": "https://dex-trade.com/spot/trading/RVNBTC"
-    },
+    { "text": "DEX Trade", "link": "https://dex-trade.com/spot/trading/RVNBTC" },
+    { "text": "Gate.io", "link": "https://www.gate.io/en/trade/RVN_USDT" },
     {
       "text": "Digifinex",
       "link": "https://www.digifinex.com/en-ww/trade/BTC/RVN"
@@ -92,6 +89,7 @@
       "text": "ProBit",
       "link": "https://www.probit.com/app/exchange/RVN-USDT"
     },
+    { "text": "UnicornX", "link": "https://www.unicornx.exchange/markets/spot-info/rvn-usdt" },
     { "text": "tZero", "link": "https://www.tzero.com/get-started" },
     {
       "text": "UpBit",
@@ -107,11 +105,11 @@
     { "text": "ChangeAngel", "link": "https://changeangel.io/" },
     { "text": "ChangeNow", "link": "https://changenow.io/?from=btc&to=rvn" },
     { "text": "CoinSwitch", "link": "https://coinswitch.co/" },
-    { "text": "Exolix", "link": "https://exolix.com/exchange/BTC-RVN" },
     { "text": "SwapSwop", "link": "https://swapswop.io/" },
     { "text": "SimpleSwap", "link": "https://simpleswap.io/coins/ravencoin" },
     { "text": "SwapSpace", "link": "https://swapspace.co/" },
-    { "text": "SwapZone", "link": "https://swapzone.io/" },
+    { "text": "SwapZone", "link": "https://swapzone.io/?to=rvn&from=doge" },
+    { "text": "Guardarian", "link": "https://guardarian.com/" },
     { "text": "StealthEx", "link": "https://stealthex.io/?to=rvn" }
   ],
   "Mining Pools": [
@@ -122,7 +120,7 @@
     { "text": "SuprNova", "link": "https://rvn.suprnova.cc/index.php" },
     { "text": "NanoPool", "link": "https://rvn.nanopool.org/" },
     { "text": "MiningPoolHub", "link": "https://ravencoin.miningpoolhub.com/" },
-    { "text": "WoolyPooly", "link": "https://woolypooly.com/#/coin/rvn" }
+    { "text": "WoolyPooly", "link": "https://woolypooly.com/en/coin/rvn" }
   ],
   "Sites": [
     { "text": "Ravencoin.world", "link": "https://ravencoin.world/" },
@@ -131,7 +129,10 @@
     { "text": "Blockchain Tiger", "link": "https://blockchaintiger.io/" },
     { "text": "Ravencoin.org", "link": "https://ravencoin.org/"},   
     { "text": "Ravencoin.or.kr (Korean)", "link": "https://ravencoin.or.kr/"},
-    { "text": "Ravencoin Timeline", "link": "https://www.ravencoin.timeline.ovh/"}  
+    { "text": "Ravencoin Timeline", "link": "https://www.ravencoin.timeline.ovh/"},  
+    { "text": "Braveland Campus", "link": "https://braveland.io"},  
+    { "text": "Charts", "link": "http://charts.ravencoin.timeline.ovh"} 
+
   ],
   "Learn": [
     {
@@ -145,22 +146,34 @@
     { "text": "Blog", "link": "https://blog.ravencoin.email/" },
     { "text": "Medium (@TronBlack)", "link": "https://medium.com/@tronblack" },
     { "text": "Wiki", "link": "https://raven.wiki/w/Ravencoin_Wiki" },
+    { "text": "Chain Stats", "link": "https://rvn.cryptoscope.io/stats/" },
+    { "text": "Ecosystem Status", "link": "https://status.ravencoin.foundation/"},
     { "text": "Privacy", "link": "/privacy" }
   ],
   "Developers": [
     {
-      "text": "Ravencoin Github",
-      "link": "https://github.com/RavenProject/Ravencoin"
-    },
-    { "text": "Block Explorer", "link": "https://api.ravencoin.org/" },
-    { "text": "Blockbook Explorer", "link": "https://blockbook.ravencoin.org/" },
-    {
-      "text": "Asset Explorer",
-      "link": "https://ravencoin.asset-explorer.net/"
-    },
-    { "text": "Asset Explorer - 2", "link": "https://www.assetsexplorer.com/" },
+      "text": "Ravencoin Github", "link": "https://github.com/RavenProject/Ravencoin"},
+    { "text": "Electrum Ravencoin", "link": "https://github.com/Electrum-RVN-SIG/electrum-ravencoin"},
+    { "text": "Rosetta API", "link": "https://github.com/ben-abraham/rosetta-ravencoin"},
     { "text": "Halving", "link": "https://ravencoin.org/halving/" },
     { "text": "Node Map", "link": "https://www.ravennodes.com/" },
+    { "text": "Asset Anatomy", "link": "https://hans-schmidt.github.io/mastering_ravencoin/analysis/Anatomy_of_a_Ravencoin_Asset_Transaction_Script.html" },
+    { "text": "Foundation GitHub", "link": "https://github.com/RavencoinFoundation" },
     { "text": "DevKit", "link": "https://github.com/RavenDevKit" }
+  ],
+  "Explorers": [
+    { "text": "Block Explorer", "link": "https://api.ravencoin.org/" },
+    { "text": "Cryptoscope", "link": "https://rvn.cryptoscope.io/" },
+    { "text": "Ravencoin Explorer", "link": "https://ravencoin.network/" },
+    { "text": "Blockbook Explorer", "link": "https://blockbook.ravencoin.org/" },
+    { "text": "Explorer (MangoFarm)", "link": "https://explorer.mangofarmassets.com/" },
+    { "text": "Asset Explorer", "link": "https://ravencoin.asset-explorer.net/" },
+    { "text": "Asset Explorer - 2", "link": "https://www.assetsexplorer.com/" }
+  ],  
+  "Awareness": [
+    { "text": "Marketing Kit", "link": "https://github.com/underdarkskies/Ravencoin-Marketing" },
+    { "text": "Shop RVN", "link": "https://www.redbubble.com/shop/ravencoin" },   
+    { "text": "YouTube Channel", "link": "https://www.youtube.com/channel/UCS7FnJO0lNroH7obhQDYNog" }
   ]
+
 }
