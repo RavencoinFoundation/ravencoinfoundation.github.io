@@ -52,7 +52,13 @@ function Meetup() {
             
             <p>
             <a href='https://www.carnival.com/booking/review?currency=USD&durDays=8&embkCode=MIA&isMilitary=N&isOver55=N&isPastGuest=N&itinCode=SCW&locality=1&numGuests=2&qbMetaCode=IS&qbPrice=654&qbRateCode=PSV&sailDate=11132021&sailingID=91434&shipCode=HZ&subRegionCode=CS&country=US'><img src={meetupimg}></img></a>
-            </p>                    
+            </p>
+
+            <p>
+            <font color='red' size='+1'>
+            Currently the sailing is at capacity.  We will monitor for available cabins and post them on Twitter.  Follow @rvn_foundation to get first notification of cabin availability.
+            </font>
+            </p>
 
         </Container>
       </StyledMeetup>
