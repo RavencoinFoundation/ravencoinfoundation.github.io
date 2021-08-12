@@ -1,6 +1,6 @@
 # Ravencoin Foundation Website
 
-This powers the Ravencoin Foundation website.
+This repo powers the Ravencoin Foundation website.
 
 ## 🚀 Quick start
 
