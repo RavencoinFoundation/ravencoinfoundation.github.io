@@ -38,7 +38,7 @@ When merging into or pushing to the `main` branch the following should happen:
 2.  Once the build finishes it is pushed to the gh-pages branch.
 3.  The site is published to Github Pages from the gh-pages branch.
 
-## 👓 Lear More About Gatsby
+## 👓 Learn More About Gatsby
 
 - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
