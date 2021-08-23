@@ -167,6 +167,7 @@
   "Explorers": [
     { "text": "Block Explorer", "link": "https://api.ravencoin.org/" },
     { "text": "Cryptoscope", "link": "https://rvn.cryptoscope.io/" },
+    { "text": "Cryptoscope (Testnet)", "link": "https://rvnt.cryptoscope.io/" },
     { "text": "Ravencoin Explorer", "link": "https://ravencoin.network/" },
     { "text": "Blockbook Explorer", "link": "https://blockbook.ravencoin.org/" },
     { "text": "Explorer (MangoFarm)", "link": "https://explorer.mangofarmassets.com/" },
