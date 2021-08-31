@@ -189,6 +189,10 @@ const IndexPage = () => {
           <section className="resources">
             <h2>Resources</h2>
             <ul>
+
+              <li>
+                <Link to="/stablecoin_proposals"> Stablecoin Proposals </Link>
+              </li>              
               <li>
                 <Link to="/proposals"> Ravencoin Development Proposals w/Bounties </Link>
               </li>
