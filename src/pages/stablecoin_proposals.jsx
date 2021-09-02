@@ -52,7 +52,7 @@ function Proposals() {
             <p>This proposal requires development from Stably to interact with Ravencoin.  The intermediate code will be released as open-source code.  This USDS token will be minted on the Ravencoin blockchain and will be backed 1:1 with USD in Prime Trust.</p>
             <p>This project put a stablecoin directly on the Ravencoin blockchain which can be used in on-chain atomic swaps.</p>
             <p>Required: $125,000.</p>
-            <p>Details - <a href='/Stably_RavenCoin_Proposal_v2.pdf'>Stably Proposal as PDF</a></p>
+            <p>Details - <a href='https://raw.githubusercontent.com/RavencoinFoundation/ravencoinfoundation.github.io/main/Stably_RavenCoin_Proposal_v2.pdf'>Stably Proposal as PDF</a></p>
             <p>RVN Contribution Address<sup>*</sup>: RBzm8wmbEcdFxAWAZ2stkxSN615uDgvqCd</p>
             </p>
  
