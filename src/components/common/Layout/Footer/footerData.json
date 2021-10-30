@@ -131,7 +131,8 @@
     { "text": "Ravencoin.org", "link": "https://ravencoin.org/"},   
     { "text": "Ravencoin.or.kr (Korean)", "link": "https://ravencoin.or.kr/"},
     { "text": "Ravencoin Timeline", "link": "https://www.ravencoin.timeline.ovh/"},  
-    { "text": "Braveland Campus", "link": "https://braveland.io"},  
+    { "text": "Braveland Campus", "link": "https://download.ravencoincampus.org"},  
+    { "text": "Ravencoin Campus", "link": "https://download.ravencoincampus.org"},  
     { "text": "RVN Bay (NFTs)", "link": "https://rvnbay.com"},  
     { "text": "Raven Trader (DeFi)", "link": "https://raventrader.net"},  
     { "text": "Charts", "link": "http://charts.ravencoin.timeline.ovh"} 
