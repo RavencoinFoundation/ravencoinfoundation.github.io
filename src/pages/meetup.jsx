@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Container } from "../components/common/Container";
-import meetupimg from "../images/meetup2021.png";
+import meetupimg from "../images/RavencoinMeetupAtSea2022.png";
 import Layout from "../components/common/Layout";
 import theme from "../utils/theme";
 
@@ -27,7 +27,7 @@ function Meetup() {
       <StyledMeetup>
         <Container>
           <h2>
-            Ravencoin Meetup 2021
+            Ravencoin Meetup 2022
           </h2>
 
             <p>
@@ -39,26 +39,22 @@ function Meetup() {
             </p>
 
             <p>
-            <strong>Where:</strong> Aboard the Carnival Horizon<br />
-            <strong>When:</strong> Nov 13, 2021 - Nov 21, 2021<br />
+            <strong>Where:</strong> Aboard the Royal Caribbean Symphony of the Seas<br />
+            <strong>When:</strong> Nov 5, 2022 - Nov 12, 2022<br />
             <strong>Who:</strong> The Ravencoin community.  That is you.<br />
-            <a href='https://www.carnival.com/booking/review?currency=USD&durDays=8&embkCode=MIA&isMilitary=N&isOver55=N&isPastGuest=N&itinCode=SCW&locality=1&numGuests=2&qbMetaCode=IS&qbPrice=654&qbRateCode=PSV&sailDate=11132021&sailingID=91434&shipCode=HZ&subRegionCode=CS&country=US'>Book Now</a>
+            <a href='https://www.cruiseplannersnc.com/GroupRegistrations/view/101895'>Book Now</a>  You'll need password: <strong>RAVENCOIN2022SY</strong> to access the site.
             </p>    
 
             <p>
-            These massive cruise ships have <a href='https://www.carnival.com/internet-plans'>internet available</a> and are perfect for remote work, or just relax and join the on-board activities.  If our event is large enough, we can get <a href='https://www.carnivalmeetings.com/plan/corporate-events/'>additional support</a> from the cruise line.
+            These massive cruise ships have internet available and are perfect for remote work, or just relax and join the on-board activities.  If our event is large enough, we can get additional support from the cruise line. 
             </p>
 
             
             <p>
-            <a href='https://www.carnival.com/booking/review?currency=USD&durDays=8&embkCode=MIA&isMilitary=N&isOver55=N&isPastGuest=N&itinCode=SCW&locality=1&numGuests=2&qbMetaCode=IS&qbPrice=654&qbRateCode=PSV&sailDate=11132021&sailingID=91434&shipCode=HZ&subRegionCode=CS&country=US'><img src={meetupimg}></img></a>
+            <a href='https://www.cruiseplannersnc.com/GroupRegistrations/view/101895'><img src={meetupimg}></img></a>
             </p>
 
-            <p>
-            <font color='red' size='+1'>
-            Currently the sailing is at capacity.  We will monitor for available cabins and post them on Twitter.  Follow @rvn_foundation to get first notification of cabin availability.
-            </font>
-            </p>
+
 
         </Container>
       </StyledMeetup>
