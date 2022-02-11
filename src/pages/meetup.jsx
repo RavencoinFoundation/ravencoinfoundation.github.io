@@ -39,14 +39,15 @@ function Meetup() {
             </p>
 
             <p>
-            <strong>Where:</strong> Aboard the Royal Caribbean Symphony of the Seas<br />
+            <strong>Where:</strong> Aboard the <a href='https://www.royalcaribbean.com/cruise-ships/symphony-of-the-seas'>Royal Caribbean Symphony of the Seas</a><br />
             <strong>When:</strong> Nov 5, 2022 - Nov 12, 2022<br />
             <strong>Who:</strong> The Ravencoin community.  That is you.<br />
-            <a href='https://www.cruiseplannersnc.com/GroupRegistrations/view/101895'>Book Now</a>  You'll need password: <strong>RAVENCOIN2022SY</strong> to access the site.
+            <a href='https://www.cruiseplannersnc.com/GroupRegistrations/view/101895'>Book Now</a><br />
+            You'll need password: <strong>RAVENCOIN2022SY</strong> to access the site.
             </p>    
 
             <p>
-            These massive cruise ships have internet available and are perfect for remote work, or just relax and join the on-board activities.  If our event is large enough, we can get additional support from the cruise line. 
+            These massive cruise ships have <a href='https://www.royalcaribbean.com/booked/cruise-ship-wifi'>internet available</a> and are perfect for remote work, or just relax and join the on-board activities.  This is aboard an <a href='https://www.royalcaribbean.com/cruise-ships/largest-ships-oasis-class'>Oasis Class Ship</a> and is one of the largest cruise ships. If our event is large enough, we can get additional support from the cruise line. 
             </p>
 
             
