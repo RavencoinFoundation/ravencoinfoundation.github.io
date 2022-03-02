@@ -176,7 +176,7 @@
     { "text": "Node Map", "link": "https://www.ravennodes.com/" },
     { "text": "Asset Anatomy", "link": "https://hans-schmidt.github.io/mastering_ravencoin/analysis/Anatomy_of_a_Ravencoin_Asset_Transaction_Script.html" },
     { "text": "Foundation GitHub", "link": "https://github.com/RavencoinFoundation" },
-    { "text": "wxRVN (IRE/IDE)", "link": "https://https://wxraven.link/" },
+    { "text": "wxRaven (IRE/IDE)", "link": "https://wxraven.link" },
     { "text": "DevKit", "link": "https://github.com/RavenDevKit" }
   ],
   "Explorers": [
