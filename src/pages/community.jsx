@@ -24,11 +24,7 @@ function Community() {
   return (
     <Layout>
       <StyledCommunity>
-        <Container>
-          <h2 className="under-construction">
-            Community page is under construction.
-          </h2>
-        </Container>
+        <iframe src='https://ravencoin.org/community/' width='100%' height='700'></iframe>
       </StyledCommunity>
     </Layout>
   );
