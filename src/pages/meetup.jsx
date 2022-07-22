@@ -42,8 +42,7 @@ function Meetup() {
             <strong>Where:</strong> Aboard the <a href='https://www.royalcaribbean.com/cruise-ships/symphony-of-the-seas'>Royal Caribbean Symphony of the Seas</a><br />
             <strong>When:</strong> Nov 5, 2022 - Nov 12, 2022<br />
             <strong>Who:</strong> The Ravencoin community.  That is you.<br />
-            <a href='https://www.cruiseplannersnc.com/GroupRegistrations/view/101895'>Book Now</a><br />
-            You'll need password: <strong>RAVENCOIN2022SY</strong> to access the site.
+            <strong>How:<strong> Book directly with <a='https://www.royalcaribbean.com/booking/landing?groupId=SY07MIA-1110323326&sailDate=2022-11-05&shipCode=SY&packageCode=SY07E306&destinationCode=CARIB&selectedCurrencyCode=USD&country=USA'>Royal Caribbean</a>, or with Sandy Dawkins (see below).  Optional: Check the discount price through <a href='https://www.vacationstogo.com/login.cfm?deal=35983'>Vacations To Go</a>.<br />
             </p>    
 
             <p>
@@ -52,7 +51,7 @@ function Meetup() {
 
             
             <p>
-            <a href='https://www.cruiseplannersnc.com/GroupRegistrations/view/101895'><img src={meetupimg}></img></a>
+            <img src={meetupimg}></img>
             </p>
 
 
