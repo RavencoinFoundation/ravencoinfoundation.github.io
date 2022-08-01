@@ -200,6 +200,9 @@ const IndexPage = () => {
                 <Link to="/proposals"> Ravencoin Development Proposals w/Bounties </Link>
               </li>
               <li>
+                <Link to="/proposal_desc"> Proposal Descriptions </Link>
+              </li>              
+              <li>
                 <Link to="/accounting"> Accounting </Link>
               </li>
               <li>
