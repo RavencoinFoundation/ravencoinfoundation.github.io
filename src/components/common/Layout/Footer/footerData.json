@@ -176,6 +176,7 @@
     { "text": "Electrum Ravencoin", "link": "https://github.com/Electrum-RVN-SIG/electrum-ravencoin"},
     { "text": "Rosetta API", "link": "https://github.com/ben-abraham/rosetta-ravencoin"},
     { "text": "Halving", "link": "https://ravencoin.org/halving/" },
+    { "text": "Raven Rebels (tools)", "link": "https://github.com/ravenrebels" },
     { "text": "Node Map", "link": "https://www.ravennodes.com/" },
     { "text": "Asset Anatomy", "link": "https://hans-schmidt.github.io/mastering_ravencoin/analysis/Anatomy_of_a_Ravencoin_Asset_Transaction_Script.html" },
     { "text": "Foundation GitHub", "link": "https://github.com/RavencoinFoundation" },
