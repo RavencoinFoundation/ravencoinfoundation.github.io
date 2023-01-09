@@ -1,0 +1,11 @@
+https://github.com/RavenProject/Ravencoin/issues/1061
+
+Here's a reference to start from. Seems to be way harder than a copy paste job, but if it can get done would only be a good thing for the chain and the community. For sure willing to throw in for a dev effort via https://ravencoin.foundation/
+
+https://github.com/RavenProject/Ravencoin/pull/1051
+
+https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki
+https://river.com/learn/what-is-taproot/
+
+
+https://ipfs.io/ipfs/QmfFRFGGYLTWBeknenbwnwRdt3hyPqX1gFaX5KxyE88MCX
