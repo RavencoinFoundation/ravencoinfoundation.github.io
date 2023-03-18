@@ -79,7 +79,6 @@
     }
   ],
   "Trade_": [  
-    { "text": "Gazua", "link": "https://www.gazuaex.io/" },
     { "text": "Graviex", "link": "https://graviex.net/markets/rvnbtc" },
     { "text": "Indodax", "link": "https://indodax.com/market/RVNIDR" },
     { "text": "OKEx", "link": "https://www.okex.com/en/markets/spot/rvn_btc" },
@@ -135,14 +134,12 @@
     { "text": "Ravencoin Timeline", "link": "https://www.ravencoin.timeline.ovh/"},  
     { "text": "Braveland Campus", "link": "https://download.ravencoincampus.org"}, 
     { "text": "Ravencoin Campus", "link": "https://download.ravencoincampus.org"},  
-    { "text": "RVN Bay (NFTs)", "link": "https://rvnbay.com"},  
     { "text": "Raven Trader (DeFi)", "link": "https://raventrader.net"},  
     { "text": "Whats Up RVN", "link": "https://whatsuprvn.com"}, 
     { "text": "Why Ravencoin?", "link": "https://whyravencoin.com"}, 
     { "text": "Charts", "link": "http://charts.ravencoin.timeline.ovh"} 
   ],
   "NFTs": [
-    { "text": "RVN Bay", "link": "https://rvnbay.com/" },
     { "text": "NFTRVN", "link": "https://nftrvn.net/" },
     { "text": "Just NFTs", "link": "https://marketplace.justnfts.io/" },
     { "text": "RVNFT Art", "link": "https://www.rvnft.art/" },
