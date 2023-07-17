@@ -56,9 +56,10 @@ function Proposals() {
             <p>Required: $125,000.</p>
             <p>Details - <a href='https://raw.githubusercontent.com/RavencoinFoundation/ravencoinfoundation.github.io/main/Stably_RavenCoin_Proposal_v2.pdf'>Stably Proposal as PDF</a></p>
             <p>RVN Contribution Address<sup>*</sup>: RBzm8wmbEcdFxAWAZ2stkxSN615uDgvqCd</p>
-            <p style="color:#FF0000">This proposal paused because PrimeTrust is closing and Stably is <a href="https://support.stably.io/en/articles/8039846-prime-trust-halting-deposit-withdrawal">paused for an indeterminate amount of time</a>.</p>
+            <p style="color:#FF0000">This proposal paused because PrimeTrust is closing and Stably is <a href='https://support.stably.io/en/articles/8039846-prime-trust-halting-deposit-withdrawal'>paused for an indeterminate amount of time</a>.</p>
 
-            <p></p>
+            <p>              
+            </p>
 
             <p style="color:#FF0000">Return of contributions over $1000 will begin week of July 17, 2023.  Remaining funds will be transfered to the general development fund.</p>
 
