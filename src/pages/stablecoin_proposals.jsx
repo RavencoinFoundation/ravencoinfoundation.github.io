@@ -30,7 +30,7 @@ function Proposals() {
       <StyledProposals>
         <Container>
           <h2>
-            Stablecoin Proposals (require community support and funding)
+            Stablecoin Proposals - INACTIVE - Contributions over $1000 being returned week of July 17, 2023.
           </h2>
 
             <p><font color='red'>There are two stablecoin proposals.  They are different and both would be valuable to have in the Ravencoin ecosystem.</font></p>
