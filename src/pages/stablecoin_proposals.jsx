@@ -33,9 +33,7 @@ function Proposals() {
             Stablecoin Proposals (require community support and funding)
           </h2>
 
-            <p>
-            There are two stablecoin proposals.  They are different and both would be valuable to have in the Ravencoin ecosystem.
-            </p>
+            <p style='color:#FF0000'>There are two stablecoin proposals.  They are different and both would be valuable to have in the Ravencoin ecosystem.</p>
 
             <p>
             <h3>OpenDAO - USDO</h3>
