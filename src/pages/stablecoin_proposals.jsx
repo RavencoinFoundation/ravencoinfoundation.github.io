@@ -30,10 +30,10 @@ function Proposals() {
       <StyledProposals>
         <Container>
           <h2>
-            Stablecoin Proposals (require community support and funding)
+            Stablecoin Proposals (require community support and funding) - Halted on July 16, 2023
           </h2>
 
-            <p>
+            <p style="color:#FF0000">
             There are two stablecoin proposals.  They are different and both would be valuable to have in the Ravencoin ecosystem.
             </p>
 
@@ -44,6 +44,8 @@ function Proposals() {
             <p>Required: $50,000 in RVN.</p>
             <p>Details: <a href='https://medium.com/opendao/opendao-x-ocp-integration-how-and-why-newly-accepted-usdo-stablecoin-collateral-defi-farms-3e7ddc8bd7be'>OpenDAO Proposal</a></p>
             <p>RVN Contribution Address<sup>*</sup>: RJzkp2xcXkEQYXYfZzdBTrvCNxy2GKqjLn</p>
+            <p style="color:#FF0000">This proposal paused because OpenDAO is no longer an option</p>
+            <p>
             </p>
 
             <br></br>
@@ -54,7 +56,12 @@ function Proposals() {
             <p>Required: $125,000.</p>
             <p>Details - <a href='https://raw.githubusercontent.com/RavencoinFoundation/ravencoinfoundation.github.io/main/Stably_RavenCoin_Proposal_v2.pdf'>Stably Proposal as PDF</a></p>
             <p>RVN Contribution Address<sup>*</sup>: RBzm8wmbEcdFxAWAZ2stkxSN615uDgvqCd</p>
-            </p>
+            <p style="color:#FF0000">This proposal paused because PrimeTrust is closing and Stably is <a href="https://support.stably.io/en/articles/8039846-prime-trust-halting-deposit-withdrawal">paused for an indeterminate amount of time</a>.</p>
+
+            <p></p>
+
+            <p style="color:#FF0000">Return of contributions over $1000 will begin week of July 17, 2023.  Remaining funds will be transfered to the general development fund.</p>
+
  
             <br></br>
             <div className="sub"><sup>*</sup>Contributions over $1000 will be returned to the originating address if the project does not reach the funding goal. Smaller contributions will be combined with Ravencoin Foundation general fund. Do not send returnable contributions from a custodial service. To prevent a larger contribution from being returned, send [X].1234 qty.</div>   
