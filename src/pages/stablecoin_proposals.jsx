@@ -49,7 +49,7 @@ function Proposals() {
             </p>
 
             <br></br>
-            <p>
+            <p> </p>
             <h3>Stably - USDS</h3>
             <p>This proposal requires development from Stably to interact with Ravencoin.  The intermediate code will be released as open-source code.  This USDS token will be minted on the Ravencoin blockchain and will be backed 1:1 with USD in Prime Trust.</p>
             <p>This project put a stablecoin directly on the Ravencoin blockchain which can be used in on-chain atomic swaps.</p>
@@ -58,8 +58,7 @@ function Proposals() {
             <p>RVN Contribution Address<sup>*</sup>: RBzm8wmbEcdFxAWAZ2stkxSN615uDgvqCd</p>
             <p style="color:#FF0000">This proposal paused because PrimeTrust is closing and Stably is <a href='https://support.stably.io/en/articles/8039846-prime-trust-halting-deposit-withdrawal'>paused for an indeterminate amount of time</a>.</p>
 
-            <p>              
-            </p>
+            <p> </p>
 
             <p style="color:#FF0000">Return of contributions over $1000 will begin week of July 17, 2023.  Remaining funds will be transfered to the general development fund.</p>
 
