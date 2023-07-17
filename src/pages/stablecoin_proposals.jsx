@@ -30,10 +30,10 @@ function Proposals() {
       <StyledProposals>
         <Container>
           <h2>
-            Stablecoin Proposals - INACTIVE - Contributions over $1000 being returned week of July 17, 2023.
+            Stablecoin Proposals - <font color='red'>INACTIVE</font> - Contributions over $1000 being returned week of July 17, 2023.
           </h2>
 
-            <p><font color='red'>There are two stablecoin proposals.  They are different and both would be valuable to have in the Ravencoin ecosystem.</font></p>
+            <p>There are two stablecoin proposals.</p>
 
             <p>
             <h3>OpenDAO - USDO</h3>
@@ -42,6 +42,8 @@ function Proposals() {
             <p>Required: $50,000 in RVN.</p>
             <p>Details: <a href='https://medium.com/opendao/opendao-x-ocp-integration-how-and-why-newly-accepted-usdo-stablecoin-collateral-defi-farms-3e7ddc8bd7be'>OpenDAO Proposal</a></p>
             <p>RVN Contribution Address<sup>*</sup>: RJzkp2xcXkEQYXYfZzdBTrvCNxy2GKqjLn</p>
+            <p><font color='red'>This proposal paused because OpenDAO is no longer an option</font></p>
+
             </p>
 
             <br></br>
@@ -52,6 +54,7 @@ function Proposals() {
             <p>Required: $125,000.</p>
             <p>Details - <a href='https://raw.githubusercontent.com/RavencoinFoundation/ravencoinfoundation.github.io/main/Stably_RavenCoin_Proposal_v2.pdf'>Stably Proposal as PDF</a></p>
             <p>RVN Contribution Address<sup>*</sup>: RBzm8wmbEcdFxAWAZ2stkxSN615uDgvqCd</p>
+            <p><font color='red'>This proposal paused because PrimeTrust is closing and Stably is <a href='https://support.stably.io/en/articles/8039846-prime-trust-halting-deposit-withdrawal'>paused for an indeterminate amount of time</a>.</font></p>
             </p>
  
             <br></br>
