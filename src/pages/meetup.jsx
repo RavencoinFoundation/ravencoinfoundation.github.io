@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Container } from "../components/common/Container";
-import meetupimg from "../images/RavencoinMeetupAtSea2022.png";
+import meetupimg from "../images/RavencoinMeetupAtSea2023.png";
 import Layout from "../components/common/Layout";
 import theme from "../utils/theme";
 
@@ -27,7 +27,7 @@ function Meetup() {
       <StyledMeetup>
         <Container>
           <h2>
-            Ravencoin Meetup 2022
+            Ravencoin Meetup 2023
           </h2>
 
             <p>
@@ -39,10 +39,10 @@ function Meetup() {
             </p>
 
             <p>
-            <strong>Where:</strong> Aboard the <a href='https://www.royalcaribbean.com/cruise-ships/symphony-of-the-seas'>Royal Caribbean Symphony of the Seas</a><br />
-            <strong>When:</strong> Nov 5, 2022 - Nov 12, 2022<br />
+            <strong>Where:</strong> Aboard the <a href='https://www.royalcaribbean.com/cruise-ships/oasis-of-the-seas'>Royal Caribbean Oasis of the Seas</a><br />
+            <strong>When:</strong> Nov 12, 2023 - Nov 19, 2023<br />
             <strong>Who:</strong> The Ravencoin community.  That is you.<br />
-            <strong>How:</strong> Book directly with <a href='https://www.royalcaribbean.com/booking/landing?groupId=SY07MIA-1110323326&sailDate=2022-11-05&shipCode=SY&packageCode=SY07E306&destinationCode=CARIB&selectedCurrencyCode=USD&country=USA'>Royal Caribbean</a>, or with Sandy Dawkins (see below).  Optional: Check the discount price through <a href='https://www.vacationstogo.com/login.cfm?deal=35983'>Vacations To Go</a>.<br />
+            <strong>How:</strong> Book directly with <a href='https://www.royalcaribbean.com/booking/stateroom?country=USA&destinationCode=CARIB&groupId=OA07MIA-2746578895&packageCode=OA07W528&sailDate=2023-11-12&selectedCurrencyCode=USD&shipCode=OA'>Royal Caribbean</a>.  Optional: Check the discount price through <a href='https://www.vacationstogo.com/fastdeal.cfm?deal=24057'>Vacations To Go</a>.<br />
             </p>    
 
             <p>
