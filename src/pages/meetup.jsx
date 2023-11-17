@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Container } from "../components/common/Container";
-import meetupimg from "../images/RavencoinMeetupAtSea2023.png";
+import meetupimg from "../images/RavencoinMeetupAtSea2024.png";
 import Layout from "../components/common/Layout";
 import theme from "../utils/theme";
 
@@ -39,14 +39,14 @@ function Meetup() {
             </p>
 
             <p>
-            <strong>Where:</strong> Aboard the <a href='https://www.royalcaribbean.com/cruise-ships/oasis-of-the-seas'>Royal Caribbean Oasis of the Seas</a><br />
-            <strong>When:</strong> Nov 12, 2023 - Nov 19, 2023<br />
+            <strong>Where:</strong> Aboard the <a href='https://www.royalcaribbean.com/icon-of-the-seas'>Royal Caribbean Icon of the Seas</a><br />
+            <strong>When:</strong> Nov 9, 2024 - Nov 16, 2024<br />
             <strong>Who:</strong> The Ravencoin community.  That is you.<br />
-            <strong>How:</strong> Book directly with <a href='https://www.royalcaribbean.com/booking/stateroom?country=USA&destinationCode=CARIB&groupId=OA07MIA-2746578895&packageCode=OA07W528&sailDate=2023-11-12&selectedCurrencyCode=USD&shipCode=OA'>Royal Caribbean</a>.  Optional: Check the discount price through <a href='https://www.vacationstogo.com/fastdeal.cfm?deal=24057'>Vacations To Go</a>.<br />
+            <strong>How:</strong> Book directly with <a href='https://www.royalcaribbean.com/booking/landing?groupId=IC07MIA-1694717396&sailDate=2024-11-09&shipCode=IC&packageCode=IC07W565&destinationCode=CARIB&selectedCurrencyCode=USD&country=USA'>Royal Caribbean</a>.  Optional: Check the discount price through <a href='https://www.vacationstogo.com/fastdeal.cfm?deal=27901'>Vacations To Go</a>.<br />
             </p>    
 
             <p>
-            These massive cruise ships have <a href='https://www.royalcaribbean.com/booked/cruise-ship-wifi'>internet available</a> and are perfect for remote work, or just relax and join the on-board activities.  This is aboard an <a href='https://www.royalcaribbean.com/cruise-ships/largest-ships-oasis-class'>Oasis Class Ship</a> and is one of the largest cruise ships. If our event is large enough, we can get additional support from the cruise line. 
+            These massive cruise ships have <a href='https://www.royalcaribbean.com/booked/cruise-ship-wifi'>internet available</a> and are perfect for remote work, or just relax and join the on-board activities.  This is aboard the newest and largest cruise ship on the ocean. It may even be the second largest ship of any type on any ocean. 
             </p>
 
             
