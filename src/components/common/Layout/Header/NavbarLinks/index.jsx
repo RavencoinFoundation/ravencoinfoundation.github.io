@@ -11,7 +11,7 @@ const NavbarLinks = ({ desktop }) => {
       <Link to="/community">Community</Link>
       <Link to="/whitepaper">Whitepaper</Link>
       <Link to="/getupdates">Updates</Link>
-      <Link to="/meetup">Meetup at Sea 2023</Link>
+      <Link to="/meetup">Meetup at Sea 2024</Link>
     </Wrapper>
   );
 };
