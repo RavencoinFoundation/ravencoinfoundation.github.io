@@ -27,7 +27,7 @@ function Meetup() {
       <StyledMeetup>
         <Container>
           <h2>
-            Ravencoin Meetup 2023
+            Ravencoin Meetup 2024
           </h2>
 
             <p>
