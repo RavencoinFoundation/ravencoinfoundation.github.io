@@ -70,7 +70,7 @@ Edit [`data/links.json`](data/links.json). Each category is a key with an array 
   to give it an icon and a one-line description. Categories display in the order they appear in
   the file, starting with `Download`.
 - Available icon names: `download`, `wallet`, `assets`, `people`, `buy`, `trade`, `swap`, `mining`,
-  `globe`, `nft`, `book`, `code`, `search`, `megaphone`, `doc`, `shield`, `mail`, `ship`.
+  `globe`, `book`, `code`, `search`, `megaphone`, `doc`, `shield`, `mail`, `ship`.
 
 ### Find and mark dead links
 

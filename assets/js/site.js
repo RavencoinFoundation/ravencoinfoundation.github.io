@@ -105,7 +105,6 @@
     mining: '<path d="M4 20l8-8M9 7l8 8M6.5 4.5l3 3M17 15l3 3"/><rect x="12" y="3" width="8" height="8" rx="2"/>',
     globe:
       '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 3 2.6 15 0 18M12 3c-2.6 3-2.6 15 0 18"/>',
-    nft: '<rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M4 17l5-4.5 4 3.5 3-2.5 4 3.5"/>',
     book: '<path d="M4 4.5A2.5 2.5 0 016.5 2H20v16H6.5A2.5 2.5 0 004 20.5z"/><path d="M4 20.5A2.5 2.5 0 016.5 18H20v4H6.5A2.5 2.5 0 014 19.5z"/>',
     code: '<path d="M9 17l-5-5 5-5M15 7l5 5-5 5"/>',
     megaphone: '<path d="M4 10v4a1 1 0 001 1h2l7 4V5L7 9H5a1 1 0 00-1 1z"/><path d="M17.5 8.5a5 5 0 010 7"/>',
