@@ -59,7 +59,7 @@
   ],
   "Trade": [
     {"text": "ATAIX", "link": "https://ataix.com/market/RVN-BTC"},
-    {"text": "AtomicDEX", "link": "https://www.atomicexplorer.com/#/coins", "status": "unreachable"},
+    {"text": "AtomicDEX", "link": "https://www.atomicdex.com/"},
     {"text": "BitLadon", "link": "https://www.bitladon.com/ravencoin"},
     {"text": "Bittrue", "link": "https://www.bitrue.com/trade/rvn_btc"},
     {"text": "Binance", "link": "https://www.binance.com/en/trade/RVN_BTC"},
