@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resources | Ravencoin Foundation</title>
+    <meta name="description" content="Every Ravencoin wallet, exchange, explorer, mining pool, NFT marketplace, developer tool and community site, in one searchable directory." />
+    <link rel="canonical" href="https://ravencoin.foundation/links/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/assets/img/raven-bird.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1b2050" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Resources | Ravencoin Foundation" />
+    <meta property="og:description" content="Every Ravencoin wallet, exchange, explorer, mining pool, NFT marketplace, developer tool and community site, in one searchable directory." />
+    <meta property="og:image" content="https://ravencoin.foundation/assets/img/raven-512.png" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rvnf-theme");
+          if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header id="site-header"></header>
+
+    <main id="content">
+      <div class="page-head">
+        <div class="wrap">
+          <h1>Ravencoin resources</h1>
+          <p>The whole Ravencoin ecosystem in one place. Search across everything, or filter by category. Press <code>/</code> to jump to the search box.</p>
+        </div>
+      </div>
+
+      <section class="section" style="padding-top:0">
+        <div class="wrap">
+          <div class="linkbar">
+            <div class="linkbar__inner">
+              <div class="search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+                <input id="link-search" type="search" placeholder="Search resources…" aria-label="Search resources" disabled />
+              </div>
+            </div>
+            <div class="chips" id="link-chips" style="margin-top:10px"></div>
+          </div>
+          <div class="links-grid" id="links-directory"></div>
+          <p class="loading" style="margin-top:28px">
+            Something missing or broken? The list lives in
+            <a href="https://github.com/RavencoinFoundation/ravencoinfoundation.github.io/blob/main/data/links.json">data/links.json</a> —
+            open an issue or a pull request, or email
+            <a href="mailto:tron@ravencoin.foundation">tron@ravencoin.foundation</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>

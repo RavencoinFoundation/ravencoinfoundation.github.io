@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Documents | Ravencoin Foundation</title>
+    <meta name="description" content="Ravencoin Foundation board meeting minutes, independent code security audits, and other published documents." />
+    <link rel="canonical" href="https://ravencoin.foundation/documents/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/assets/img/raven-bird.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1b2050" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Documents | Ravencoin Foundation" />
+    <meta property="og:description" content="Ravencoin Foundation board meeting minutes, independent code security audits, and other published documents." />
+    <meta property="og:image" content="https://ravencoin.foundation/assets/img/raven-512.png" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rvnf-theme");
+          if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header id="site-header"></header>
+
+    <main id="content">
+      <div class="page-head">
+        <div class="wrap">
+          <h1>Documents</h1>
+          <p>Everything the Foundation publishes. These lists are generated from the folders in the site repository — drop a file in the folder and it appears here.</p>
+        </div>
+      </div>
+
+      <section class="section" style="padding-top:0">
+        <div class="wrap">
+          <div class="section-head" id="board-meeting-minutes">
+            <span class="eyebrow">Governance</span>
+            <h2>Board meeting minutes</h2>
+            <p>Minutes from Ravencoin Foundation board meetings, newest first.</p>
+          </div>
+          <ul class="doclist" data-folder="BoardMeetingMinutes" data-ext="pdf"></ul>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="wrap">
+          <div class="section-head" id="code-security-audit">
+            <span class="eyebrow">Security</span>
+            <h2>Code security audits</h2>
+            <p>
+              Independent assessments of the Ravencoin codebase, commissioned by the Foundation.
+            </p>
+          </div>
+          <ul class="doclist" data-folder="CodeSecurityAudit" data-ext="pdf"></ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head" id="proposals-archive">
+            <span class="eyebrow">Archive</span>
+            <h2>Submitted proposals</h2>
+            <p>Proposal documents submitted to the Foundation and pinned to IPFS.</p>
+          </div>
+          <ul class="doclist" data-folder="ProposalArchive" data-ext="txt,pdf"></ul>
+
+          <div class="card-grid" style="margin-top:34px">
+            <a class="card" href="/accounting/">
+              <h3><span class="card__icon" data-icon="trade"></span> Accounting</h3>
+              <p>The Foundation's income and spending.</p>
+            </a>
+            <a class="card" href="/whitepaper/">
+              <h3><span class="card__icon" data-icon="book"></span> Whitepaper</h3>
+              <p>The original Ravencoin whitepaper.</p>
+            </a>
+            <a class="card" href="/privacy/">
+              <h3><span class="card__icon" data-icon="shield"></span> Privacy policy</h3>
+              <p>What the Foundation does and does not collect.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>

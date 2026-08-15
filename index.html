@@ -1,7 +1,191 @@
-<html>
-Ravencoin Foundation
-<br />
-<a href='proposals'>Ravencoin Development Proposals w/Bounties</a>
-<a href='BoardMeetingMinutes'>Board Meeting Minutes</a><br />
-<a href='CodeSecurityAudit'>Code Security Audit</a><br />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ravencoin Foundation</title>
+    <meta
+      name="description"
+      content="The Ravencoin Foundation supports the Ravencoin open-source project — and links to every Ravencoin wallet, explorer, exchange, tool, and community on the web."
+    />
+    <meta name="google-site-verification" content="Pacm5C3ahyDFbNKYrhIWMQXNYnGquIYEE0_ma-BuFzg" />
+    <link rel="canonical" href="https://ravencoin.foundation/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/assets/img/raven-bird.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1b2050" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ravencoin Foundation" />
+    <meta
+      property="og:description"
+      content="Helping Ravencoin soar. Every Ravencoin resource in one place."
+    />
+    <meta property="og:image" content="https://ravencoin.foundation/assets/img/raven-512.png" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rvnf-theme");
+          if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header id="site-header"></header>
+
+    <main id="content">
+      <section class="hero">
+        <div class="wrap hero__inner">
+          <div>
+            <span class="eyebrow">Non-profit · Supporting open source</span>
+            <h1>Helping Ravencoin soar.</h1>
+            <p class="hero__lede">
+              Ravencoin is not a company. It is technology, source code, and the network that
+              emerges when people run it. The Foundation exists to support that project — and to
+              keep every Ravencoin resource on the web easy to find.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#resources">
+                Browse all resources
+              </a>
+              <a class="btn btn--ghost" href="/downloads/">Get a wallet</a>
+            </div>
+          </div>
+          <div class="hero__art">
+            <img src="/assets/img/raven-bird.svg" alt="" width="230" height="353" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="wrap">
+          <div class="card-grid">
+            <a class="card" href="/downloads/">
+              <h3><span class="card__icon" data-icon="download"></span> Wallets</h3>
+              <p>Ravencoin Core for Windows, Mac and Linux, plus mobile and third-party wallets.</p>
+            </a>
+            <a class="card" href="#cat-explorers">
+              <h3><span class="card__icon" data-icon="search"></span> Explorers</h3>
+              <p>Look up blocks, transactions, assets, and testnet activity.</p>
+            </a>
+            <a class="card" href="/community/">
+              <h3><span class="card__icon" data-icon="people"></span> Community</h3>
+              <p>Discord, Telegram, Facebook, and the people building around Ravencoin.</p>
+            </a>
+            <a class="card" href="/whitepaper/">
+              <h3><span class="card__icon" data-icon="book"></span> Whitepaper</h3>
+              <p>Why Ravencoin exists and how assets work on the chain.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="resources">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">The directory</span>
+            <h2>Every Ravencoin resource</h2>
+            <p>
+              Wallets, exchanges, explorers, mining pools, NFT marketplaces, developer tools, and
+              community sites — maintained by the Foundation so you always have a starting point.
+              Search, or filter by category.
+            </p>
+          </div>
+
+          <div class="linkbar">
+            <div class="linkbar__inner">
+              <div class="search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+                <input
+                  id="link-search"
+                  type="search"
+                  placeholder="Search resources — try “explorer”, “wallet”, “mining”…"
+                  aria-label="Search resources"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="chips" id="link-chips" style="margin-top: 10px"></div>
+          </div>
+
+          <div class="links-grid" id="links-directory"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">What we are</span>
+            <h2>About the Foundation</h2>
+          </div>
+          <div class="prose" style="max-width: 74ch">
+            <p>
+              The Ravencoin Foundation is not Ravencoin. Ravencoin is
+              <a href="https://github.com/RavenProject/Ravencoin" target="_blank" rel="noopener noreferrer">open-source software</a>
+              that volunteers run to create a network of nodes, which in turn constructs a massively
+              replicated blockchain-based ledger for RVN and for any other asset tokens created by
+              the network's users.
+            </p>
+            <p>
+              The Ravencoin Foundation is a non-profit organization that endeavors to assist and
+              protect the Ravencoin open-source project. It also provides a legal entity that can
+              hold and distribute development funds, apply for signing keys and certificates, hold
+              App Store accounts, run Ravencoin explorers, run seed nodes, connect community
+              members, and communicate a shared vision for the project.
+            </p>
+          </div>
+
+          <div class="donate" style="margin-top: 26px">
+            <span class="donate__label">Donate</span>
+            <code>RVM93VRB9jn6FXps9mMu4iftxt7BpGexGM</code>
+            <button class="copy-btn" type="button" data-copy="RVM93VRB9jn6FXps9mMu4iftxt7BpGexGM">
+              Copy
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Foundation activity</span>
+            <h2>What the Foundation is doing</h2>
+            <p>Meetings, money, proposals, and audits — published as they happen.</p>
+          </div>
+          <div class="card-grid">
+            <a class="card" href="/proposals/">
+              <h3><span class="card__icon" data-icon="code"></span> Proposals &amp; Bounties</h3>
+              <p>Development work the community wants done, with bounties attached.</p>
+            </a>
+            <a class="card" href="/documents/">
+              <h3><span class="card__icon" data-icon="doc"></span> Documents</h3>
+              <p>Board meeting minutes and independent code security audits.</p>
+            </a>
+            <a class="card" href="/accounting/">
+              <h3><span class="card__icon" data-icon="trade"></span> Accounting</h3>
+              <p>Where the Foundation's funds come from and where they go.</p>
+            </a>
+            <a class="card" href="/meetup/">
+              <h3><span class="card__icon" data-icon="ship"></span> Meetup at Sea 2026</h3>
+              <p>Nov 14–22, 2026 — eight nights in the Southern Caribbean with the community.</p>
+            </a>
+            <a class="card" href="/contact/">
+              <h3><span class="card__icon" data-icon="people"></span> Who to talk to</h3>
+              <p>People in and around the Foundation, and what they work on.</p>
+            </a>
+            <a class="card" href="/getupdates/">
+              <h3><span class="card__icon" data-icon="mail"></span> Get updates</h3>
+              <p>Ravencoin and Foundation news by email, plus the blog.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script src="/assets/js/site.js"></script>
+  </body>
 </html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy | Ravencoin Foundation</title>
+    <meta name="description" content="The Ravencoin Foundation privacy policy." />
+    <link rel="canonical" href="https://ravencoin.foundation/privacy/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/assets/img/raven-bird.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1b2050" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Privacy Policy | Ravencoin Foundation" />
+    <meta property="og:description" content="The Ravencoin Foundation privacy policy." />
+    <meta property="og:image" content="https://ravencoin.foundation/assets/img/raven-512.png" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rvnf-theme");
+          if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header id="site-header"></header>
+
+    <main id="content">
+      <div class="page-head">
+        <div class="wrap">
+          <h1>Privacy policy</h1>
+        </div>
+      </div>
+
+      <section class="section" style="padding-top:0">
+        <div class="wrap wrap--narrow">
+          <div class="prose">
+            <p>
+              Ravencoin Foundation does not collect personally identifiable information except for
+              an opt-in newsletter about Ravencoin, which collects name and e-mail address. Cookies
+              may be used for session info only.
+            </p>
+            <p>
+              Neither the Ravencoin core wallet nor the mobile wallets (iOS/Android) collect
+              personal information. From time to time, app diagnostics may be sent to a cloud
+              provider to help guide development and improve user experience. The wallet software
+              obtains a price feed from an API, which would allow the IP address to be stored in
+              server logs. Wallets may obtain balance and UTXO information via API calls to
+              publicly available explorers.
+            </p>
+          </div>
+
+          <div class="notice notice--warn" style="margin-top:26px">
+            <p>
+              <strong>Warning:</strong> because the Ravencoin Foundation does not store passwords or
+              account e-mail information, it is unable to recover your private keys in the event you
+              lose them. Be sure to back up your wallet's private key and store it safely and
+              securely. This is ordinarily 12 or 24 words you will write down. The private key seed
+              is your ability to transfer funds on the Ravencoin blockchain, and loss of these words
+              may result in the loss of your funds.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>

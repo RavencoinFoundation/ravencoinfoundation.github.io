@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: ravencoin.foundation
+Token: 8cc1d44f1a7b13b875e60d1a4c7f0cf5f9b7858e83aef729bcccccfb5bf4352a

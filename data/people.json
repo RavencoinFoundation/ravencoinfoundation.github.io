@@ -1,0 +1,56 @@
+{
+  "_comment": "Contact directory. Add one object per person to \"people\". Every field except \"name\" is optional — leave anything out and the card adapts. Groups are rendered in the order listed in \"groups\"; a person with no group (or an unknown group) falls into the last group. Social keys understood by the site: x, facebook, linkedin, github, email, website, telegram, discord, medium, youtube, instagram, reddit, mastodon, keybase, bluesky. Any other key renders as a plain labeled link.",
+
+  "_template": {
+    "name": "Full Name",
+    "alias": "handle",
+    "group": "Contributors",
+    "role": "What they do for the Foundation or the project",
+    "location": "City, Country",
+    "strengths": ["C++", "Community", "Design"],
+    "bio": "One or two sentences.",
+    "photo": "/assets/img/people/filename.jpg",
+    "links": {
+      "x": "https://x.com/handle",
+      "facebook": "https://www.facebook.com/handle",
+      "linkedin": "https://www.linkedin.com/in/handle",
+      "github": "https://github.com/handle",
+      "email": "name@example.com",
+      "website": "https://example.com",
+      "telegram": "https://t.me/handle",
+      "discord": "handle",
+      "medium": "https://medium.com/@handle",
+      "youtube": "https://www.youtube.com/@handle"
+    }
+  },
+
+  "groups": [
+    {
+      "name": "Foundation",
+      "blurb": "Directors and officers of the Ravencoin Foundation."
+    },
+    {
+      "name": "Contributors",
+      "blurb": "People building and maintaining Ravencoin software and infrastructure."
+    },
+    {
+      "name": "Community",
+      "blurb": "Organizers, educators, artists, and everyone else keeping the community alive."
+    }
+  ],
+
+  "people": [
+    {
+      "name": "Tron Black",
+      "alias": "TronBlack",
+      "group": "Foundation",
+      "role": "Lead developer, Ravencoin; Ravencoin Foundation",
+      "strengths": ["Ravencoin Core", "C++", "Protocol design", "Assets"],
+      "bio": "Long-time Ravencoin developer and the contact point for development proposals and bounties.",
+      "links": {
+        "email": "tron@ravencoin.foundation",
+        "medium": "https://medium.com/@tronblack"
+      }
+    }
+  ]
+}
