@@ -392,6 +392,18 @@ main {
   color: var(--orange);
 }
 
+/* Links inside the hero sit on a dark ground in both themes, so they cannot
+   use the page accent colour. */
+.hero__lede a {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  text-underline-offset: 3px;
+}
+.hero__lede a:hover {
+  text-decoration-color: var(--orange);
+}
+
 .hero__art {
   display: grid;
   place-items: center;
