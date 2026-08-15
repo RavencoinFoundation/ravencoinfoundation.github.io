@@ -276,6 +276,7 @@
     json("/data/links.json").then(
       function (data) {
         var meta = data._categories || {};
+        var checked = data._checked || "";
         // data-only="Download,Learn" limits the block to those categories.
         var only = (container.getAttribute("data-only") || "")
           .split(",")
@@ -314,16 +315,27 @@
               links
                 .map(function (l) {
                   var ext = isExternal(l.link);
+                  var down = l.status === "unreachable";
                   return (
                     '<li data-text="' +
                     esc(l.text.toLowerCase()) +
-                    '"><a href="' +
+                    '"><a class="' +
+                    (down ? "is-unreachable" : "") +
+                    '" href="' +
                     esc(l.link) +
                     '"' +
+                    (down
+                      ? ' title="Did not respond when links were last checked' +
+                        (checked ? " on " + esc(checked) : "") +
+                        '. It may be gone, or only temporarily down."'
+                      : "") +
                     (ext ? ' target="_blank" rel="noopener noreferrer"' : "") +
                     "><span>" +
                     esc(l.text) +
                     "</span>" +
+                    (down
+                      ? '<span class="unreachable-mark" aria-label="unreachable">&#9679;</span>'
+                      : "") +
                     (ext ? icon("external", "ext") : "") +
                     "</a></li>"
                   );
@@ -333,7 +345,15 @@
               "</section>"
             );
           })
-          .join("") + '<p class="empty-state is-hidden" id="link-empty">No resources match that search.</p>';
+          .join("") +
+          '<p class="empty-state is-hidden" id="link-empty">No resources match that search.</p>' +
+          (checked
+            ? '<p class="linkcheck-note"><span class="unreachable-mark">&#9679;</span> ' +
+              "Dimmed entries did not respond when links were last checked on " +
+              esc(checked) +
+              ". They may be gone for good, or only temporarily down — the links still work if " +
+              "the site comes back.</p>"
+            : "");
 
         if (chipBox) {
           chipBox.innerHTML =
