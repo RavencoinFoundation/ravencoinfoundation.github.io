@@ -10,7 +10,6 @@
     "Swap": {"icon": "swap", "blurb": "Instant swap services."},
     "Mining Pools": {"icon": "mining", "blurb": "Pools for mining RVN with KAWPOW."},
     "Sites": {"icon": "globe", "blurb": "Community sites and portals."},
-    "NFTs": {"icon": "nft", "blurb": "Marketplaces and galleries for Ravencoin NFTs."},
     "Learn": {"icon": "book", "blurb": "Docs, research, news, and stats."},
     "Developers": {"icon": "code", "blurb": "Source, tooling, and APIs."},
     "Explorers": {"icon": "search", "blurb": "Block, asset, and testnet explorers."},
@@ -120,17 +119,6 @@
     {"text": "Whats Up RVN", "link": "https://whatsuprvn.com", "status": "unreachable"},
     {"text": "Why Ravencoin?", "link": "https://whyravencoin.com"},
     {"text": "Charts", "link": "http://charts.ravencoin.timeline.ovh", "status": "unreachable"}
-  ],
-  "NFTs": [
-    {"text": "NFTRVN", "link": "https://nftrvn.net/", "status": "unreachable"},
-    {"text": "Just NFTs", "link": "https://marketplace.justnfts.io/", "status": "unreachable"},
-    {"text": "RVNFT Art", "link": "https://www.rvnft.art/", "status": "unreachable"},
-    {"text": "Nifty Synth", "link": "https://niftysynth.com/"},
-    {"text": "Raven Trader", "link": "https://raventrader.net/", "status": "unreachable"},
-    {"text": "Asset Market", "link": "https://theassetmarketplace.com/", "status": "unreachable"},
-    {"text": "Ravenist", "link": "https://www.ravenist.com/"},
-    {"text": "WAGMI NFT", "link": "https://wagminft.net/", "status": "unreachable"},
-    {"text": "Mellori Market", "link": "https://mellori.market/", "status": "unreachable"}
   ],
   "Learn": [
     {"text": "Whitepaper", "link": "https://ravencoin.org/assets/documents/Ravencoin.pdf"},
