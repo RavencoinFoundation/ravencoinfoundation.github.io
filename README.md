@@ -72,6 +72,22 @@ Edit [`data/links.json`](data/links.json). Each category is a key with an array 
 - Available icon names: `download`, `wallet`, `assets`, `people`, `buy`, `trade`, `swap`, `mining`,
   `globe`, `nft`, `book`, `code`, `search`, `megaphone`, `doc`, `shield`, `mail`, `ship`.
 
+### Find and mark dead links
+
+```bash
+./tools/check-links.py            # report only
+./tools/check-links.py --write    # also update data/links.json
+```
+
+Anything that fails gets `"status": "unreachable"` in `data/links.json`, and the site renders it
+dimmed with a red dot and a tooltip. The link stays clickable — a site that is down today may be
+back next month — and the entry brightens again automatically the next time the checker succeeds.
+A `_checked` date at the bottom of the file drives the note shown under the directory.
+
+Sites that answer `403` or `429` to scripted requests count as working, since they load fine in a
+real browser. Pages that return `200` but are parked, for sale, or a shutdown notice count as
+broken, because the resource a visitor came for is not there.
+
 ### Add someone to the contact page
 
 Edit [`data/people.json`](data/people.json) and add an object to `people`. Only `name` is required:

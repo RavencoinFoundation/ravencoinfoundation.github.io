@@ -735,6 +735,33 @@ a.card:hover {
 .linkcat li a:hover .ext {
   opacity: 0.75;
 }
+/* Links that failed the last availability check. Dimmed, but still clickable —
+   a site that is down today may be back tomorrow. The dot carries the meaning
+   for anyone who cannot perceive the dimming. */
+.linkcat li a.is-unreachable {
+  opacity: 0.45;
+}
+.linkcat li a.is-unreachable:hover {
+  opacity: 0.85;
+}
+.unreachable-mark {
+  color: var(--red);
+  font-size: 0.62em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.linkcheck-note {
+  grid-column: 1 / -1;
+  margin: 22px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: 76ch;
+}
+.linkcheck-note .unreachable-mark {
+  font-size: 0.8em;
+}
+
 .linkcat li a mark {
   background: color-mix(in srgb, var(--orange) 45%, transparent);
   color: inherit;
