@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Downloads | Ravencoin Foundation</title>
+    <meta name="description" content="Download Ravencoin Core and Ravencoin wallets for Windows, Mac, Linux, iOS and Android." />
+    <link rel="canonical" href="https://ravencoin.foundation/downloads/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/assets/img/raven-bird.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1b2050" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Downloads | Ravencoin Foundation" />
+    <meta property="og:description" content="Download Ravencoin Core and Ravencoin wallets for Windows, Mac, Linux, iOS and Android." />
+    <meta property="og:image" content="https://ravencoin.foundation/assets/img/raven-512.png" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rvnf-theme");
+          if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header id="site-header"></header>
+
+    <main id="content">
+      <div class="page-head">
+        <div class="wrap">
+          <h1>Downloads</h1>
+          <p>Ravencoin Core and the mobile wallets. Releases are published by the Ravencoin project on GitHub; always check that you are downloading from a source you trust.</p>
+        </div>
+      </div>
+
+      <section class="section" style="padding-top:0">
+        <div class="wrap">
+          <div class="card-grid">
+            <a class="card" href="https://github.com/RavenProject/Ravencoin/releases" target="_blank" rel="noopener noreferrer">
+              <h3><span class="card__icon" data-icon="download"></span> All releases</h3>
+              <p>Every Ravencoin Core release, with checksums and signatures, on GitHub.</p>
+            </a>
+            <a class="card" href="https://ravencoin.org/wallet/" target="_blank" rel="noopener noreferrer">
+              <h3><span class="card__icon" data-icon="wallet"></span> Wallet chooser</h3>
+              <p>Ravencoin.org's list of wallets for every platform.</p>
+            </a>
+            <a class="card" href="/links/#cat-asset-wallets">
+              <h3><span class="card__icon" data-icon="assets"></span> Asset wallets</h3>
+              <p>Wallets that can hold Ravencoin assets and NFTs, not just RVN.</p>
+            </a>
+          </div>
+
+          <div class="section-head" style="margin-top:44px">
+            <h2>Direct downloads</h2>
+            <p>The versions currently linked from this site.</p>
+          </div>
+          <div class="links-grid" id="links-directory" data-only="Download,Asset Wallets,RVN Wallets"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>

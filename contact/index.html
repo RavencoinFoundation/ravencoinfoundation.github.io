@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Ravencoin Foundation</title>
+    <meta name="description" content="People in and around the Ravencoin Foundation — what they work on and how to reach them." />
+    <link rel="canonical" href="https://ravencoin.foundation/contact/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/assets/img/raven-bird.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1b2050" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact | Ravencoin Foundation" />
+    <meta property="og:description" content="People in and around the Ravencoin Foundation — what they work on and how to reach them." />
+    <meta property="og:image" content="https://ravencoin.foundation/assets/img/raven-512.png" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rvnf-theme");
+          if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header id="site-header"></header>
+
+    <main id="content">
+      <div class="page-head">
+        <div class="wrap">
+          <h1>Contact</h1>
+          <p>People in and around the Foundation and the Ravencoin project — what they are good at, and where to find them.</p>
+        </div>
+      </div>
+
+      <section class="section" style="padding-top:0">
+        <div class="wrap">
+          <div class="linkbar">
+            <div class="linkbar__inner">
+              <div class="search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+                <input id="people-search" type="search" placeholder="Search by name, alias, or strength…" aria-label="Search people" disabled />
+              </div>
+            </div>
+          </div>
+
+          <div id="people-directory"></div>
+
+          <div class="notice" style="margin-top:34px">
+            <p>
+              <strong>General enquiries:</strong>
+              <a href="mailto:tron@ravencoin.foundation">tron@ravencoin.foundation</a>. For
+              day-to-day conversation, the community lives on
+              <a href="https://discord.com/invite/jn6uhur" target="_blank" rel="noopener noreferrer">Discord</a>
+              and <a href="https://t.me/RavencoinDev" target="_blank" rel="noopener noreferrer">Telegram</a>.
+            </p>
+            <p style="margin-bottom:0">
+              Want to be listed, or need an entry changed? The directory is
+              <a href="https://github.com/RavencoinFoundation/ravencoinfoundation.github.io/blob/main/data/people.json">data/people.json</a> —
+              send a pull request or email the address above. Only include contact details you are
+              happy to publish.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>
