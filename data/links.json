@@ -151,7 +151,8 @@
     {"text": "Blockbook Explorer", "link": "https://blockbook.ravencoin.org/"},
     {"text": "Explorer (MangoFarm)", "link": "https://explorer.mangofarmassets.com/"},
     {"text": "Asset Explorer", "link": "https://ravencoin.asset-explorer.net/"},
-    {"text": "Asset Explorer - 2", "link": "https://www.assetsexplorer.com/"}
+    {"text": "Asset Explorer - 2", "link": "https://www.assetsexplorer.com/"},
+    {"text": "KawTrace", "link": "https://cerberuscx.github.io/KawTrace/#/view/dashboard"}
   ],
   "Awareness": [
     {"text": "Marketing Kit", "link": "https://github.com/underdarkskies/Ravencoin-Marketing"},
