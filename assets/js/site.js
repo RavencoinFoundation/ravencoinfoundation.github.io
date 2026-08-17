@@ -318,6 +318,8 @@
                   return (
                     '<li data-text="' +
                     esc(l.text.toLowerCase()) +
+                    '" data-label="' +
+                    esc(l.text) +
                     '"><a class="' +
                     (down ? "is-unreachable" : "") +
                     '" href="' +
@@ -365,6 +367,21 @@
         }
 
         var activeCat = "";
+
+        // Wrap the matched part of a label in <mark> so the hit is obvious,
+        // which matters most when a ?search= link drops you straight onto it.
+        function highlight(label, q) {
+          var at = q ? label.toLowerCase().indexOf(q) : -1;
+          if (at === -1) return esc(label);
+          return (
+            esc(label.slice(0, at)) +
+            "<mark>" +
+            esc(label.slice(at, at + q.length)) +
+            "</mark>" +
+            esc(label.slice(at + q.length))
+          );
+        }
+
         function apply() {
           var q = (searchBox ? searchBox.value : "").trim().toLowerCase();
           var anyVisible = false;
@@ -378,7 +395,11 @@
                   li.getAttribute("data-text").indexOf(q) !== -1 ||
                   sec.getAttribute("data-cat").toLowerCase().indexOf(q) !== -1);
               li.classList.toggle("is-hidden", !hit);
-              if (hit) shown++;
+              if (hit) {
+                shown++;
+                var label = el("a span", li);
+                if (label) label.innerHTML = highlight(li.getAttribute("data-label"), q);
+              }
             });
             sec.classList.toggle("is-hidden", shown === 0);
             if (shown) anyVisible = true;
@@ -387,8 +408,50 @@
           if (empty) empty.classList.toggle("is-hidden", anyVisible);
         }
 
+        /* --- Shareable URLs -------------------------------------------------
+           /links/?search=KawTrace lands on that entry; ?category=Explorers
+           preselects a filter. The address bar tracks whatever you type, so a
+           search you did by hand can just be copied out of the URL bar. */
+        function loose(s) {
+          return String(s).toLowerCase().replace(/[^a-z0-9]/g, "");
+        }
+
+        function syncUrl() {
+          if (!window.history || !history.replaceState) return;
+          var p = new URLSearchParams(location.search);
+          var q = searchBox ? searchBox.value.trim() : "";
+          if (q) p.set("search", q);
+          else p.delete("search");
+          if (activeCat) p.set("category", activeCat);
+          else p.delete("category");
+          var qs = p.toString();
+          history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
+        }
+
+        function readUrl() {
+          var p = new URLSearchParams(location.search);
+          var q = p.get("search") || p.get("q") || "";
+          var cat = p.get("category") || p.get("cat") || "";
+          if (q && searchBox) searchBox.value = q;
+          if (cat) {
+            var match = categories.filter(function (c) {
+              return loose(c) === loose(cat);
+            })[0];
+            if (match) {
+              activeCat = match;
+              els(".chip", chipBox).forEach(function (c) {
+                c.classList.toggle("is-active", c.getAttribute("data-filter") === match);
+              });
+            }
+          }
+          return !!(q || cat);
+        }
+
         if (searchBox) {
-          searchBox.addEventListener("input", apply);
+          searchBox.addEventListener("input", function () {
+            apply();
+            syncUrl();
+          });
           searchBox.removeAttribute("disabled");
         }
         if (chipBox) {
@@ -400,6 +463,21 @@
               c.classList.toggle("is-active", c === chip);
             });
             apply();
+            syncUrl();
+          });
+        }
+
+        if (readUrl()) {
+          apply();
+          // On pages where the directory sits below a hero, bring it into view
+          // so the deep link actually shows the thing it filtered to. Jump
+          // rather than smooth-scroll: the page is still settling here, and an
+          // animated scroll gets interrupted by the layout shifting under it.
+          requestAnimationFrame(function () {
+            var target = el("#link-search") || container;
+            if (target.getBoundingClientRect().top > window.innerHeight * 0.5) {
+              target.scrollIntoView({ block: "center", behavior: "auto" });
+            }
           });
         }
 

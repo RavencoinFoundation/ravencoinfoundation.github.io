@@ -72,6 +72,24 @@ Edit [`data/links.json`](data/links.json). Each category is a key with an array 
 - Available icon names: `download`, `wallet`, `assets`, `people`, `buy`, `trade`, `swap`, `mining`,
   `globe`, `book`, `code`, `search`, `megaphone`, `doc`, `shield`, `mail`, `ship`.
 
+### Link straight to a resource
+
+The directory reads the query string, so any search is a URL you can share or bookmark:
+
+```
+https://ravencoin.foundation/links/?search=KawTrace
+https://ravencoin.foundation/links/?category=Explorers
+https://ravencoin.foundation/links/?category=Mining%20Pools&search=nano
+```
+
+`search` prefills the box and filters; the match is highlighted. `category` preselects a filter
+chip and is forgiving about case and punctuation, so `mining-pools`, `Mining Pools`, and
+`miningpools` all work. `q` and `cat` are accepted as short forms.
+
+It works on any page showing the directory, including `/?search=…` on the home page, which scrolls
+down to the results. The address bar also updates as you type, so a search you did by hand can just
+be copied out of the URL bar.
+
 ### Find and mark dead links
 
 ```bash
