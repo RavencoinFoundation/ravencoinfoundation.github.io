@@ -662,7 +662,13 @@ a.card:hover {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
-  align-items: start;
+  /* Panels sitting side by side share a height, so the grid reads as a grid.
+     One link row is its line box plus its padding; ten of those plus the
+     list's own padding is the cap. See the stacked override further down. */
+  align-items: stretch;
+  --link-rows: 10;
+  --link-row: calc(1.65 * 0.94rem + 16px);
+  --link-list-max: calc(var(--link-rows) * var(--link-row) + 16px);
 }
 
 .linkcat {
@@ -703,11 +709,56 @@ a.card:hover {
   padding: 10px 18px 0;
   font-size: 0.82rem;
   color: var(--muted);
+  /* Reserve two lines so every list starts on the same line across the row. */
+  min-height: calc(2 * 1.65 * 0.82rem + 10px);
 }
 .linkcat ul {
   list-style: none;
   margin: 0;
   padding: 8px;
+  max-height: var(--link-list-max);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+.linkcat ul::-webkit-scrollbar {
+  width: 9px;
+}
+.linkcat ul::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border: 3px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+}
+.linkcat ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.links-grid:not(.is-filtered) .linkcat ul {
+  height: var(--link-list-max);
+}
+
+/* Overlay scrollbars stay hidden until you touch them, so a capped list needs
+   its own hint that more is below. These gradients are painted in the list's
+   own scroll space (background-attachment: local), which makes them fade in
+   and out on their own at each end — no script, no state to keep. */
+.linkcat ul {
+  background:
+    linear-gradient(var(--surface) 40%, rgba(255, 255, 255, 0)) top / 100% 22px no-repeat local,
+    linear-gradient(rgba(255, 255, 255, 0), var(--surface) 60%) bottom / 100% 22px no-repeat local,
+    radial-gradient(farthest-side at 50% 0, rgba(22, 24, 58, 0.13), rgba(22, 24, 58, 0)) top / 100% 9px
+      no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%, rgba(22, 24, 58, 0.13), rgba(22, 24, 58, 0)) bottom / 100% 9px
+      no-repeat scroll;
+}
+:root[data-theme="dark"] .linkcat ul {
+  background:
+    linear-gradient(var(--surface) 40%, rgba(23, 26, 53, 0)) top / 100% 22px no-repeat local,
+    linear-gradient(rgba(23, 26, 53, 0), var(--surface) 60%) bottom / 100% 22px no-repeat local,
+    radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)) top / 100% 9px no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)) bottom / 100% 9px
+      no-repeat scroll;
 }
 .linkcat li a {
   display: flex;
@@ -769,11 +820,34 @@ a.card:hover {
   padding: 0 1px;
 }
 
+/* Single column — nothing is side by side, so there is no height to match.
+   Show every link and take the scrollbars away. Below this width the grid is
+   forced to one column so the two rules can never disagree. */
+@media (max-width: 620px) {
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
+  .linkcat ul,
+  .links-grid:not(.is-filtered) .linkcat ul {
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+  .linkcat ul,
+  :root[data-theme="dark"] .linkcat ul {
+    background: none;
+  }
+  .linkcat__blurb {
+    min-height: 0;
+  }
+}
+
 .is-hidden {
   display: none !important;
 }
 
 .empty-state {
+  grid-column: 1 / -1;
   text-align: center;
   color: var(--muted);
   padding: 40px 0;
