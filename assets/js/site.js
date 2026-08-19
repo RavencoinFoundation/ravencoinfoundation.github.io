@@ -406,6 +406,9 @@
           });
           var empty = el("#link-empty");
           if (empty) empty.classList.toggle("is-hidden", anyVisible);
+          // Panels are pinned to a uniform ten rows only while the full list is
+          // showing; once filtered they shrink to whatever matched.
+          container.classList.toggle("is-filtered", !!q || !!activeCat);
         }
 
         /* --- Shareable URLs -------------------------------------------------
