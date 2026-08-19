@@ -59,18 +59,19 @@ On every other host — your own domain, GitHub Pages, a local file — there is
 
 ## Hosting
 
-There is no build step and no dependencies. Copy the four files anywhere that serves static
-files — GitHub Pages, S3, a plain web server:
+`index.html` is the whole application. The styles, the code and the QR encoder are inlined into
+it, so there is nothing else to copy, no build step and no dependencies. Save that one file
+anywhere that serves static files — GitHub Pages, S3, a plain web server — and it works:
 
 ```
-index.html
+index.html                 everything
 foundation_authorized      (only consulted on ravencoin.foundation)
-assets/styles.css
-assets/app.js
-assets/qr.js
 ```
 
-`assets/qr.js` is a small self-contained QR encoder (byte mode, error-correction level M) that
-renders the `ravencoin:` payment URI as an SVG, so nothing is fetched from a third-party QR
+The QR encoder is a small self-contained implementation (byte mode, error-correction level M)
+that renders the `ravencoin:` payment URI as an SVG, so nothing is fetched from a third-party QR
 service. Opening the file directly from disk works too, though the copy button is more reliable
 when the page is served over http(s).
+
+Everything lives in one file so that saving the page is enough to take a copy. The `<style>` and
+the two `<script>` blocks are contiguous and clearly delimited if you need to edit them.

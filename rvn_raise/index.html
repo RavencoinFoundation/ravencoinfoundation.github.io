@@ -12,7 +12,547 @@
 <meta property="og:description" content="A live fundraising thermometer that fills up as RVN arrives at the address.">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23123227'/%3E%3Crect x='13' y='5' width='6' height='16' rx='3' fill='%23f6efe2'/%3E%3Ccircle cx='16' cy='23' r='6' fill='%23d94436'/%3E%3Crect x='14' y='12' width='4' height='10' fill='%23d94436'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/styles.css">
+<style>
+/* ---------- Palette and type ---------- */
+:root {
+    --paper:        #faf5ec;
+    --paper-warm:   #f3ecdd;
+    --card:         #fffdf7;
+    --ink:          #16302a;
+    --ink-soft:     #5d6b64;
+    --rule:         #e2d9c6;
+    --rule-strong:  #c9bda4;
+    --accent:       #a8802a;
+    --success:      #2f7d4f;
+    --mercury:      #d8453a;
+    --mercury-dark: #a5291f;
+    --mercury-light:#f3796a;
+    --glass:        #ffffff;
+    --glass-shadow: #e8e0cf;
+    --shadow:       0 1px 2px rgba(28, 38, 33, .05), 0 12px 32px -18px rgba(28, 38, 33, .45);
+    --qr-bg:        #fffdf7;
+    --qr-fg:        #16302a;
+
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper:        #12181a;
+        --paper-warm:   #182022;
+        --card:         #1a2325;
+        --ink:          #f0e9db;
+        --ink-soft:     #a3b0aa;
+        --rule:         #2c3739;
+        --rule-strong:  #46534f;
+        --accent:       #d7b063;
+        --success:      #63c68d;
+        --mercury:      #e2564a;
+        --mercury-dark: #ac3227;
+        --mercury-light:#f88b7c;
+        --glass:        #263133;
+        --glass-shadow: #1b2426;
+        --shadow:       0 1px 2px rgba(0, 0, 0, .3), 0 16px 40px -22px rgba(0, 0, 0, .9);
+        --qr-bg:        #f0e9db;
+        --qr-fg:        #12181a;
+    }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(1200px 700px at 50% -10%, var(--paper-warm), transparent 70%),
+        var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.page {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: clamp(1.75rem, 5vw, 4rem) clamp(1.1rem, 4vw, 2.5rem) 3rem;
+}
+
+/* ---------- Masthead ---------- */
+.masthead { text-align: center; }
+
+.eyebrow {
+    margin: 0 0 .75rem;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.reason {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.9rem, 5.4vw, 3.1rem);
+    line-height: 1.12;
+    letter-spacing: -.01em;
+    text-wrap: balance;
+}
+
+.tagline {
+    margin: .85rem auto 0;
+    max-width: 46ch;
+    color: var(--ink-soft);
+    font-size: clamp(.98rem, 2.4vw, 1.08rem);
+    text-wrap: pretty;
+}
+
+.masthead::after {
+    content: "";
+    display: block;
+    width: 74px;
+    height: 1px;
+    margin: clamp(1.5rem, 4vw, 2.25rem) auto 0;
+    background: linear-gradient(90deg, transparent, var(--rule-strong), transparent);
+}
+
+/* ---------- Board layout ---------- */
+.board {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    margin-top: clamp(1.75rem, 4vw, 2.75rem);
+    align-items: start;
+}
+
+@media (min-width: 820px) {
+    .board {
+        grid-template-columns: minmax(240px, 300px) 1fr;
+        gap: clamp(2.5rem, 5vw, 4.5rem);
+        align-items: center;
+    }
+}
+
+/* ---------- Thermometer ---------- */
+.gauge {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 250px;
+}
+
+.gauge svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 46vh;
+    overflow: visible;
+}
+
+@media (min-width: 820px) {
+    .gauge { max-width: 300px; }
+    .gauge svg { max-height: min(74vh, 640px); }
+}
+
+.tube-outline, .bulb-outline {
+    stroke: var(--rule-strong);
+    stroke-width: 2.5;
+}
+
+.ticks line { stroke: var(--rule-strong); stroke-width: 2; stroke-linecap: round; }
+.ticks line.major { stroke: var(--ink-soft); stroke-width: 2.5; }
+
+.ticks text {
+    fill: var(--ink-soft);
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-variant-numeric: tabular-nums;
+    text-anchor: end;
+}
+
+.ticks text.major { fill: var(--ink); font-weight: 600; }
+
+.pointer path { stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; }
+
+.pointer text {
+    fill: var(--ink);
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.pointer .plus { fill: var(--success); font-size: 24px; font-weight: 700; }
+
+.gauge.reached .bulb,
+.gauge.reached .bulb-outline { filter: drop-shadow(0 0 10px rgba(216, 69, 58, .45)); }
+
+/* ---------- Celebration burst ---------- */
+.burst { opacity: 0; pointer-events: none; }
+
+.burst-glow { fill: var(--mercury); opacity: .16; }
+
+.burst-rays line {
+    stroke: var(--mercury);
+    stroke-width: 6;
+    stroke-linecap: round;
+}
+
+.burst-rays line.short { stroke: var(--accent); stroke-width: 5; }
+
+.spark { fill: var(--accent); }
+.spark:nth-of-type(even) { fill: var(--mercury); }
+
+/* The group carries a translate attribute, so only the inner group may be
+   transformed — a CSS transform here would replace that attribute. */
+.gauge.reached .burst { opacity: 1; }
+
+.burst-inner {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+}
+
+.gauge.reached .burst-inner {
+    animation:
+        burst-pop .75s cubic-bezier(.2, 1.5, .45, 1) both,
+        burst-breathe 2.8s ease-in-out .75s infinite;
+}
+
+.gauge.reached .spark { animation: spark-twinkle 2.8s ease-in-out infinite; }
+.gauge.reached .spark:nth-of-type(3) { animation-delay: .5s; }
+.gauge.reached .spark:nth-of-type(4) { animation-delay: 1s; }
+.gauge.reached .spark:nth-of-type(5) { animation-delay: 1.5s; }
+
+@keyframes burst-pop {
+    from { opacity: 0; transform: scale(.2) rotate(-12deg); }
+    60%  { opacity: 1; transform: scale(1.18) rotate(4deg); }
+    to   { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@keyframes burst-breathe {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.09); }
+}
+
+@keyframes spark-twinkle {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: .25; }
+}
+
+/* ---------- Tally ---------- */
+.panel { display: grid; gap: clamp(1.5rem, 3.5vw, 2.25rem); }
+
+.tally-label {
+    margin: 0;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+.tally-amount {
+    margin: .15rem 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 8vw, 3.6rem);
+    line-height: 1.05;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.02em;
+    word-break: break-word;
+}
+
+.tally-amount .ticker {
+    font-family: var(--font-body);
+    font-size: .34em;
+    font-weight: 600;
+    letter-spacing: .1em;
+    color: var(--ink-soft);
+    vertical-align: .35em;
+}
+
+.tally-goal { margin: .35rem 0 0; color: var(--ink-soft); }
+.tally-goal strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+.bar {
+    margin-top: 1.15rem;
+    height: 8px;
+    border-radius: 99px;
+    background: var(--paper-warm);
+    box-shadow: inset 0 0 0 1px var(--rule);
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--mercury-dark), var(--mercury));
+}
+
+.pending { margin: .7rem 0 0; font-size: .92rem; color: var(--ink-soft); }
+
+.cheer {
+    margin: .85rem 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 4.6vw, 1.9rem);
+    line-height: 1.25;
+    font-weight: 600;
+    color: var(--accent);
+    text-wrap: balance;
+}
+
+/* ---------- Donate card ---------- */
+.donate {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 18px;
+    padding: clamp(1.1rem, 3vw, 1.6rem);
+    box-shadow: var(--shadow);
+}
+
+.donate-title {
+    margin: 0 0 1rem;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+.donate-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 3vw, 1.5rem);
+    align-items: flex-start;
+}
+
+.qr {
+    flex: 0 0 auto;
+    width: 132px;
+    padding: 8px;
+    background: var(--qr-bg);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    line-height: 0;
+}
+
+.qr svg { width: 100%; height: auto; }
+
+.donate-text { flex: 1 1 15rem; min-width: 0; }
+
+.address {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: clamp(.9rem, 2.9vw, 1.06rem);
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: .01em;
+    overflow-wrap: anywhere;
+}
+
+.donate-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-top: 1rem;
+}
+
+.donate-note {
+    margin: .9rem 0 0;
+    font-size: .84rem;
+    color: var(--ink-soft);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    padding: .6rem 1.1rem;
+    border: 1px solid transparent;
+    border-radius: 99px;
+    background: var(--ink);
+    color: var(--paper);
+    font: inherit;
+    font-size: .92rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .12s ease, opacity .12s ease;
+}
+
+.btn:hover { transform: translateY(-1px); opacity: .92; }
+.btn:active { transform: translateY(0); }
+
+[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+
+.btn-quiet {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--rule-strong);
+}
+
+.link-btn {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink-soft);
+    font: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.link-btn:hover { color: var(--ink); }
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ---------- Meta and colophon ---------- */
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+    justify-content: space-between;
+    font-size: .84rem;
+    color: var(--ink-soft);
+}
+
+.meta.error { color: var(--mercury); }
+
+.colophon {
+    max-width: 52ch;
+    margin: clamp(2.5rem, 6vw, 4rem) auto 0;
+    text-align: center;
+    font-size: .82rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+}
+
+.colophon a { color: inherit; text-decoration-color: var(--rule-strong); text-underline-offset: 3px; }
+.colophon a:hover { color: var(--ink); }
+.colophon code { font-family: var(--font-mono); font-size: .95em; color: var(--ink); }
+
+/* ---------- Authorization gate ---------- */
+.gate-card {
+    max-width: 34rem;
+    margin: clamp(1.75rem, 4vw, 2.5rem) auto 0;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 18px;
+    padding: clamp(1.25rem, 4vw, 1.9rem);
+    box-shadow: var(--shadow);
+}
+
+.gate-detail {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: .4rem 1.25rem;
+    margin: 0;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+.gate-detail dt {
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-top: .2rem;
+}
+
+.gate-detail dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: .95rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.gate-next { margin: 1.1rem 0 0; }
+.gate-next a { color: inherit; font-weight: 600; text-underline-offset: 3px; }
+
+/* ---------- Setup screen ---------- */
+.setup-form {
+    display: grid;
+    gap: 1.1rem;
+    max-width: 34rem;
+    margin: clamp(1.75rem, 4vw, 2.5rem) auto 0;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 18px;
+    padding: clamp(1.25rem, 4vw, 1.9rem);
+    box-shadow: var(--shadow);
+}
+
+.setup-form label { display: grid; gap: .35rem; }
+
+.setup-form span {
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+.setup-form input {
+    width: 100%;
+    padding: .65rem .8rem;
+    border: 1px solid var(--rule-strong);
+    border-radius: 10px;
+    background: var(--paper);
+    color: var(--ink);
+    font: inherit;
+}
+
+.setup-out {
+    margin-top: .25rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--rule);
+}
+
+.setup-out-label {
+    margin: 0 0 .35rem;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+.setup-hint {
+    margin: .6rem 0 0;
+    font-size: .84rem;
+    color: var(--mercury);
+}
+
+.setup-link {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: .86rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    .gauge.reached .burst,
+    .gauge.reached .burst-inner,
+    .gauge.reached .spark { animation: none; }
+}
+</style>
 </head>
 <body>
 
@@ -173,6 +713,11 @@
     <p>Parameters: <code>?rvn=</code> goal &middot; <code>&amp;addr=</code> receiving address &middot;
       <code>&amp;reason=</code> what the money is for. Optional: <code>&amp;mode=balance</code> to gauge the current
       balance instead of the total ever received, and <code>&amp;rpc=</code> to point at your own node.</p>
+    <p><strong>Run it on your own site.</strong> Save this one page &mdash; the styles, the code and the QR
+      generator are all inside it &mdash; anywhere that serves files: GitHub Pages, S3, your own server, even a USB
+      stick. Nothing else to copy, no build step, no server code, and no approval needed: the authorization list
+      applies only on ravencoin.foundation.
+      <a href="index.html" download="rvn-fundraiser.html">Save this page</a>.</p>
   </footer>
 </main>
 
@@ -205,10 +750,939 @@
     <p>Authorized campaigns are listed in <code>foundation_authorized</code> on this site, one
       <code>&lt;address&gt;, &lt;amount&gt;</code> per line. Anywhere other than ravencoin.foundation, this page runs
       without an authorization list.</p>
+    <p><strong>You do not have to wait for approval.</strong> Save this one page to your own site and the
+      fundraiser runs there immediately, exactly as it would here &mdash; everything it needs is inside this single
+      file, and the authorization check applies only on ravencoin.foundation.
+      <a href="index.html" download="rvn-fundraiser.html">Save this page</a>.</p>
   </footer>
 </main>
 
-<script src="assets/qr.js"></script>
-<script src="assets/app.js"></script>
+<script>
+/*
+ * Minimal QR Code encoder (byte mode, error-correction level M, versions 1-10).
+ * No dependencies, no network. Returns a boolean module matrix.
+ *
+ * Usage: QR.encode("ravencoin:RKMR...")  ->  { size, modules }
+ */
+(function (root, factory) {
+    const api = factory();
+    if (typeof module === 'object' && module.exports) module.exports = api;
+    if (root) root.QR = api;
+}(typeof window !== 'undefined' ? window : globalThis, function () {
+    'use strict';
+
+    // Per-version structure for error-correction level M.
+    // [total codewords, ec codewords per block, blocks in group 1, data cw in group 1, blocks in group 2, data cw in group 2]
+    const VERSIONS = {
+        1:  [26,  10, 1, 16, 0, 0],
+        2:  [44,  16, 1, 28, 0, 0],
+        3:  [70,  26, 1, 44, 0, 0],
+        4:  [100, 18, 2, 32, 0, 0],
+        5:  [134, 24, 2, 43, 0, 0],
+        6:  [172, 16, 4, 27, 0, 0],
+        7:  [196, 18, 4, 31, 0, 0],
+        8:  [242, 22, 2, 38, 2, 39],
+        9:  [292, 22, 3, 36, 2, 37],
+        10: [346, 26, 4, 43, 1, 44]
+    };
+
+    const ALIGNMENT = {
+        1: [], 2: [6, 18], 3: [6, 22], 4: [6, 26], 5: [6, 30],
+        6: [6, 34], 7: [6, 22, 38], 8: [6, 24, 42], 9: [6, 26, 46], 10: [6, 28, 50]
+    };
+
+    /* ---------- GF(256) arithmetic for Reed-Solomon ---------- */
+
+    const EXP = new Uint8Array(512);
+    const LOG = new Uint8Array(256);
+    (function initTables() {
+        let x = 1;
+        for (let i = 0; i < 255; i++) {
+            EXP[i] = x;
+            LOG[x] = i;
+            x <<= 1;
+            if (x & 0x100) x ^= 0x11d;
+        }
+        for (let i = 255; i < 512; i++) EXP[i] = EXP[i - 255];
+    }());
+
+    function gfMul(a, b) {
+        if (a === 0 || b === 0) return 0;
+        return EXP[LOG[a] + LOG[b]];
+    }
+
+    function rsGenerator(degree) {
+        let poly = [1];
+        for (let i = 0; i < degree; i++) {
+            const next = new Array(poly.length + 1).fill(0);
+            for (let j = 0; j < poly.length; j++) {
+                next[j] ^= poly[j];
+                next[j + 1] ^= gfMul(poly[j], EXP[i]);
+            }
+            poly = next;
+        }
+        return poly;
+    }
+
+    function rsEncode(data, ecCount) {
+        const generator = rsGenerator(ecCount);
+        const remainder = new Array(ecCount).fill(0);
+        for (const byte of data) {
+            const factor = byte ^ remainder[0];
+            remainder.shift();
+            remainder.push(0);
+            if (factor !== 0) {
+                for (let i = 0; i < ecCount; i++) {
+                    remainder[i] ^= gfMul(generator[i + 1], factor);
+                }
+            }
+        }
+        return remainder;
+    }
+
+    /* ---------- BCH codes for format and version information ---------- */
+
+    function formatBits(maskPattern) {
+        // Level M is encoded as 00.
+        let value = (0b00 << 3) | maskPattern;
+        let remainder = value << 10;
+        for (let i = 14; i >= 10; i--) {
+            if (remainder & (1 << i)) remainder ^= 0b10100110111 << (i - 10);
+        }
+        return ((value << 10) | remainder) ^ 0b101010000010010;
+    }
+
+    function versionBits(version) {
+        let remainder = version << 12;
+        for (let i = 17; i >= 12; i--) {
+            if (remainder & (1 << i)) remainder ^= 0b1111100100101 << (i - 12);
+        }
+        return (version << 12) | remainder;
+    }
+
+    /* ---------- Encoding ---------- */
+
+    function utf8Bytes(text) {
+        if (typeof TextEncoder !== 'undefined') return Array.from(new TextEncoder().encode(text));
+        return Array.from(unescape(encodeURIComponent(text)), c => c.charCodeAt(0));
+    }
+
+    function dataCapacity(version) {
+        const [total, ecPerBlock, blocks1, data1, blocks2, data2] = VERSIONS[version];
+        return blocks1 * data1 + blocks2 * data2;
+    }
+
+    function pickVersion(byteLength) {
+        for (let version = 1; version <= 10; version++) {
+            const countBits = version < 10 ? 8 : 16;
+            const needed = Math.ceil((4 + countBits + byteLength * 8) / 8);
+            if (needed <= dataCapacity(version)) return version;
+        }
+        throw new Error('Content is too long for this QR encoder');
+    }
+
+    function buildCodewords(bytes, version) {
+        const capacity = dataCapacity(version);
+        const countBits = version < 10 ? 8 : 16;
+        const bits = [];
+        const push = (value, length) => {
+            for (let i = length - 1; i >= 0; i--) bits.push((value >> i) & 1);
+        };
+
+        push(0b0100, 4);
+        push(bytes.length, countBits);
+        for (const byte of bytes) push(byte, 8);
+
+        const capacityBits = capacity * 8;
+        for (let i = 0; i < 4 && bits.length < capacityBits; i++) bits.push(0);
+        while (bits.length % 8 !== 0) bits.push(0);
+
+        const codewords = [];
+        for (let i = 0; i < bits.length; i += 8) {
+            let byte = 0;
+            for (let j = 0; j < 8; j++) byte = (byte << 1) | bits[i + j];
+            codewords.push(byte);
+        }
+        const padding = [0xec, 0x11];
+        for (let i = 0; codewords.length < capacity; i++) codewords.push(padding[i % 2]);
+        return codewords;
+    }
+
+    function interleave(codewords, version) {
+        const [total, ecPerBlock, blocks1, data1, blocks2, data2] = VERSIONS[version];
+        const dataBlocks = [];
+        const ecBlocks = [];
+        let offset = 0;
+
+        for (let i = 0; i < blocks1; i++) {
+            const block = codewords.slice(offset, offset + data1);
+            offset += data1;
+            dataBlocks.push(block);
+            ecBlocks.push(rsEncode(block, ecPerBlock));
+        }
+        for (let i = 0; i < blocks2; i++) {
+            const block = codewords.slice(offset, offset + data2);
+            offset += data2;
+            dataBlocks.push(block);
+            ecBlocks.push(rsEncode(block, ecPerBlock));
+        }
+
+        const result = [];
+        const maxData = Math.max(data1, data2);
+        for (let i = 0; i < maxData; i++) {
+            for (const block of dataBlocks) if (i < block.length) result.push(block[i]);
+        }
+        for (let i = 0; i < ecPerBlock; i++) {
+            for (const block of ecBlocks) result.push(block[i]);
+        }
+        return result;
+    }
+
+    /* ---------- Matrix construction ---------- */
+
+    function createMatrix(version) {
+        const size = version * 4 + 17;
+        const modules = [];
+        const reserved = [];
+        for (let row = 0; row < size; row++) {
+            modules.push(new Array(size).fill(false));
+            reserved.push(new Array(size).fill(false));
+        }
+
+        const setFinder = (top, left) => {
+            for (let row = -1; row <= 7; row++) {
+                for (let col = -1; col <= 7; col++) {
+                    const r = top + row;
+                    const c = left + col;
+                    if (r < 0 || r >= size || c < 0 || c >= size) continue;
+                    const inRing = (row >= 0 && row <= 6 && (col === 0 || col === 6)) ||
+                        (col >= 0 && col <= 6 && (row === 0 || row === 6));
+                    const inCore = row >= 2 && row <= 4 && col >= 2 && col <= 4;
+                    modules[r][c] = inRing || inCore;
+                    reserved[r][c] = true;
+                }
+            }
+        };
+
+        setFinder(0, 0);
+        setFinder(0, size - 7);
+        setFinder(size - 7, 0);
+
+        // Timing patterns
+        for (let i = 8; i < size - 8; i++) {
+            modules[6][i] = i % 2 === 0;
+            modules[i][6] = i % 2 === 0;
+            reserved[6][i] = true;
+            reserved[i][6] = true;
+        }
+
+        // Alignment patterns
+        const centers = ALIGNMENT[version];
+        for (const rowCenter of centers) {
+            for (const colCenter of centers) {
+                const nearFinder =
+                    (rowCenter <= 8 && colCenter <= 8) ||
+                    (rowCenter <= 8 && colCenter >= size - 9) ||
+                    (rowCenter >= size - 9 && colCenter <= 8);
+                if (nearFinder) continue;
+                for (let row = -2; row <= 2; row++) {
+                    for (let col = -2; col <= 2; col++) {
+                        const r = rowCenter + row;
+                        const c = colCenter + col;
+                        modules[r][c] = Math.max(Math.abs(row), Math.abs(col)) !== 1;
+                        reserved[r][c] = true;
+                    }
+                }
+            }
+        }
+
+        // Dark module
+        modules[size - 8][8] = true;
+        reserved[size - 8][8] = true;
+
+        // Reserve format information areas
+        for (let i = 0; i < 9; i++) {
+            if (!reserved[8][i]) { reserved[8][i] = true; modules[8][i] = false; }
+            if (!reserved[i][8]) { reserved[i][8] = true; modules[i][8] = false; }
+        }
+        for (let i = 0; i < 8; i++) {
+            reserved[8][size - 1 - i] = true;
+            reserved[size - 1 - i][8] = true;
+        }
+
+        // Reserve version information areas
+        if (version >= 7) {
+            for (let row = 0; row < 6; row++) {
+                for (let col = 0; col < 3; col++) {
+                    reserved[row][size - 11 + col] = true;
+                    reserved[size - 11 + col][row] = true;
+                }
+            }
+        }
+
+        return { size, modules, reserved };
+    }
+
+    function placeData(matrix, codewords) {
+        const { size, modules, reserved } = matrix;
+        const bits = [];
+        for (const codeword of codewords) {
+            for (let i = 7; i >= 0; i--) bits.push((codeword >> i) & 1);
+        }
+
+        let index = 0;
+        let upward = true;
+        for (let right = size - 1; right >= 1; right -= 2) {
+            if (right === 6) right = 5;
+            for (let step = 0; step < size; step++) {
+                const row = upward ? size - 1 - step : step;
+                for (let offset = 0; offset < 2; offset++) {
+                    const col = right - offset;
+                    if (reserved[row][col]) continue;
+                    modules[row][col] = index < bits.length ? bits[index] === 1 : false;
+                    index++;
+                }
+            }
+            upward = !upward;
+        }
+    }
+
+    function maskFunction(pattern) {
+        switch (pattern) {
+            case 0: return (r, c) => (r + c) % 2 === 0;
+            case 1: return (r) => r % 2 === 0;
+            case 2: return (r, c) => c % 3 === 0;
+            case 3: return (r, c) => (r + c) % 3 === 0;
+            case 4: return (r, c) => (Math.floor(r / 2) + Math.floor(c / 3)) % 2 === 0;
+            case 5: return (r, c) => ((r * c) % 2) + ((r * c) % 3) === 0;
+            case 6: return (r, c) => (((r * c) % 2) + ((r * c) % 3)) % 2 === 0;
+            default: return (r, c) => (((r + c) % 2) + ((r * c) % 3)) % 2 === 0;
+        }
+    }
+
+    function penalty(modules, size) {
+        let score = 0;
+
+        // Rule 1: runs of five or more same-colour modules in a row or column.
+        for (let i = 0; i < size; i++) {
+            for (const horizontal of [true, false]) {
+                let runColour = null;
+                let runLength = 0;
+                for (let j = 0; j < size; j++) {
+                    const value = horizontal ? modules[i][j] : modules[j][i];
+                    if (value === runColour) {
+                        runLength++;
+                    } else {
+                        if (runLength >= 5) score += runLength - 2;
+                        runColour = value;
+                        runLength = 1;
+                    }
+                }
+                if (runLength >= 5) score += runLength - 2;
+            }
+        }
+
+        // Rule 2: 2x2 blocks of the same colour.
+        for (let row = 0; row < size - 1; row++) {
+            for (let col = 0; col < size - 1; col++) {
+                const value = modules[row][col];
+                if (value === modules[row][col + 1] && value === modules[row + 1][col] && value === modules[row + 1][col + 1]) {
+                    score += 3;
+                }
+            }
+        }
+
+        // Rule 3: finder-like patterns.
+        const patternA = [true, false, true, true, true, false, true, false, false, false, false];
+        const patternB = [false, false, false, false, true, false, true, true, true, false, true];
+        const matches = (get, start) => {
+            for (const pattern of [patternA, patternB]) {
+                let ok = true;
+                for (let i = 0; i < 11; i++) {
+                    if (get(start + i) !== pattern[i]) { ok = false; break; }
+                }
+                if (ok) return true;
+            }
+            return false;
+        };
+        for (let i = 0; i < size; i++) {
+            for (let j = 0; j <= size - 11; j++) {
+                if (matches(k => modules[i][k], j)) score += 40;
+                if (matches(k => modules[k][i], j)) score += 40;
+            }
+        }
+
+        // Rule 4: overall balance of dark modules.
+        let dark = 0;
+        for (let row = 0; row < size; row++) {
+            for (let col = 0; col < size; col++) if (modules[row][col]) dark++;
+        }
+        const percent = (dark * 100) / (size * size);
+        score += Math.floor(Math.abs(percent - 50) / 5) * 10;
+
+        return score;
+    }
+
+    function applyFormat(modules, size, maskPattern) {
+        const bits = formatBits(maskPattern);
+        for (let i = 0; i < 15; i++) {
+            const bit = ((bits >> i) & 1) === 1;
+            // Copy beside the top-left finder
+            if (i < 6) modules[i][8] = bit;
+            else if (i === 6) modules[7][8] = bit;
+            else if (i === 7) modules[8][8] = bit;
+            else if (i === 8) modules[8][7] = bit;
+            else modules[8][14 - i] = bit;
+            // Duplicate copy split between the other two finders
+            if (i < 8) modules[8][size - 1 - i] = bit;
+            else modules[size - 15 + i][8] = bit;
+        }
+        modules[size - 8][8] = true; // dark module
+    }
+
+    function applyVersion(modules, size, version) {
+        if (version < 7) return;
+        const bits = versionBits(version);
+        for (let i = 0; i < 18; i++) {
+            const bit = ((bits >> i) & 1) === 1;
+            const row = Math.floor(i / 3);
+            const col = i % 3;
+            modules[row][size - 11 + col] = bit;
+            modules[size - 11 + col][row] = bit;
+        }
+    }
+
+    function encode(text) {
+        const bytes = utf8Bytes(String(text));
+        const version = pickVersion(bytes.length);
+        const codewords = interleave(buildCodewords(bytes, version), version);
+        const matrix = createMatrix(version);
+        placeData(matrix, codewords);
+
+        const { size, modules, reserved } = matrix;
+        let best = null;
+        for (let pattern = 0; pattern < 8; pattern++) {
+            const candidate = modules.map(row => row.slice());
+            const shouldMask = maskFunction(pattern);
+            for (let row = 0; row < size; row++) {
+                for (let col = 0; col < size; col++) {
+                    if (!reserved[row][col] && shouldMask(row, col)) candidate[row][col] = !candidate[row][col];
+                }
+            }
+            applyFormat(candidate, size, pattern);
+            applyVersion(candidate, size, version);
+            const score = penalty(candidate, size);
+            if (!best || score < best.score) best = { score, modules: candidate };
+        }
+
+        return { size, version, modules: best.modules };
+    }
+
+    /** Renders a QR matrix as a compact SVG path string. */
+    function toSvg(text, { quietZone = 2, className = '' } = {}) {
+        const { size, modules } = encode(text);
+        const dimension = size + quietZone * 2;
+        let path = '';
+        for (let row = 0; row < size; row++) {
+            for (let col = 0; col < size; col++) {
+                if (modules[row][col]) path += `M${col + quietZone} ${row + quietZone}h1v1h-1z`;
+            }
+        }
+        return `<svg class="${className}" viewBox="0 0 ${dimension} ${dimension}" role="img" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">` +
+            `<rect width="${dimension}" height="${dimension}" fill="var(--qr-bg, #fff)"/>` +
+            `<path d="${path}" fill="var(--qr-fg, #12261f)"/></svg>`;
+    }
+
+    return { encode, toSvg };
+}));
+</script>
+
+<script>
+/*
+ * Fundraising thermometer for a Ravencoin address.
+ *
+ * Everything the page needs comes from the query string:
+ *   ?rvn=100000&addr=R...&reason=Security%20audit%20of%20code
+ * Optional:
+ *   &mode=balance   gauge the address's current balance instead of everything it has ever received
+ *   &rpc=https://…  point at your own Ravencoin RPC proxy instead of the public one
+ *
+ * Balances come from Ravencoin Core's address index over JSON-RPC — the same
+ * endpoint and calls the KawTrace explorer uses (getaddressbalance).
+ */
+(function () {
+    'use strict';
+
+    const DEFAULT_RPC = 'https://rvn-rpc-mainnet.ting.finance/rpc';
+    const EXPLORER = 'https://cerberuscx.github.io/KawTrace/#/address/';
+    const DEFAULT_GOAL = 100000;
+    const REFRESH_MS = 60000;
+    const SATOSHI = 1e8;
+    const ADDRESS_PATTERN = /^[Rr][1-9A-HJ-NP-Za-km-z]{25,40}$/;
+
+    // On the Foundation's own domain a campaign has to be on the authorized list
+    // before the page will run it. Everywhere else the page is unrestricted.
+    const GATED_HOST = /(^|\.)ravencoin\.foundation$/i;
+    const AUTHORIZED_LIST = 'foundation_authorized';
+
+    // Vertical scale of the thermometer, in the SVG's own coordinates.
+    const SCALE_TOP = 76;
+    const SCALE_BOTTOM = 440;
+    const TUBE_LEFT = 96;
+    // Above the dome: filling to here floods the rounded tip once the goal is passed.
+    const DOME_TOP = 26;
+
+    const $ = id => document.getElementById(id);
+
+    /* ---------- Query string ---------- */
+
+    function readParams() {
+        const raw = new URLSearchParams(window.location.search);
+        const values = {};
+        raw.forEach((value, key) => {
+            const name = key.trim().toLowerCase();
+            if (!(name in values)) values[name] = value;
+        });
+        return values;
+    }
+
+    /** Strips quotes people leave in hand-written URLs: reason="Security audit". */
+    function unquote(value) {
+        const text = String(value == null ? '' : value).trim();
+        if (text.length > 1 && /^["'].*["']$/.test(text)) return text.slice(1, -1).trim();
+        return text;
+    }
+
+    /** Accepts 100000, 100,000, 100k, 1.5M, "250 000 RVN". */
+    function parseAmount(value) {
+        const text = unquote(value).replace(/rvn/gi, '').replace(/[\s,_]/g, '');
+        const match = /^([0-9]*\.?[0-9]+)([kmb])?$/i.exec(text);
+        if (!match) return null;
+        const multipliers = { k: 1e3, m: 1e6, b: 1e9 };
+        const amount = parseFloat(match[1]) * (match[2] ? multipliers[match[2].toLowerCase()] : 1);
+        return Number.isFinite(amount) && amount > 0 ? amount : null;
+    }
+
+    /* ---------- Formatting ---------- */
+
+    function formatRvn(amount) {
+        const decimals = amount >= 1000 ? 0 : amount >= 1 ? 2 : 4;
+        return amount.toLocaleString(undefined, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: decimals
+        });
+    }
+
+    /** Short scale labels: 14.4K, 1.2M. */
+    function formatCompact(amount) {
+        try {
+            return amount.toLocaleString(undefined, { notation: 'compact', maximumFractionDigits: 1 });
+        } catch (error) {
+            if (amount >= 1e6) return (amount / 1e6).toFixed(1).replace(/\.0$/, '') + 'M';
+            if (amount >= 1e3) return (amount / 1e3).toFixed(1).replace(/\.0$/, '') + 'K';
+            return String(Math.round(amount));
+        }
+    }
+
+    function formatAge(milliseconds) {
+        const seconds = Math.round(milliseconds / 1000);
+        if (seconds < 45) return 'just now';
+        const minutes = Math.round(seconds / 60);
+        if (minutes < 60) return minutes + (minutes === 1 ? ' minute ago' : ' minutes ago');
+        const hours = Math.round(minutes / 60);
+        return hours + (hours === 1 ? ' hour ago' : ' hours ago');
+    }
+
+    /* ---------- Blockchain data ---------- */
+
+    function rpc(endpoint, method, params) {
+        return fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ jsonrpc: '1.0', id: 'rvn-thermometer', method, params })
+        }).then(response => {
+            // A rejected call comes back as HTTP 500 with the node's reason in the body,
+            // so read the body before trusting the status code.
+            return response.json().catch(() => null).then(payload => {
+                const failure = payload && payload.error;
+                const reason = failure && (failure.message || (failure.error && failure.error.message));
+                if (reason) throw new Error(reason);
+                if (!response.ok) throw new Error('Explorer returned HTTP ' + response.status);
+                if (!payload) throw new Error('Explorer returned an unreadable response');
+                return payload.result;
+            });
+        });
+    }
+
+    async function fetchTotals(endpoint, address) {
+        const [totals, mempool] = await Promise.all([
+            rpc(endpoint, 'getaddressbalance', [{ addresses: [address] }]),
+            rpc(endpoint, 'getaddressmempool', [{ addresses: [address] }]).catch(() => [])
+        ]);
+
+        const pending = (Array.isArray(mempool) ? mempool : [])
+            .map(entry => Number(entry && entry.satoshis) || 0)
+            .filter(satoshis => satoshis > 0)
+            .reduce((sum, satoshis) => sum + satoshis, 0);
+
+        return {
+            balance: (Number(totals.balance) || 0) / SATOSHI,
+            received: (Number(totals.received) || 0) / SATOSHI,
+            pending: pending / SATOSHI
+        };
+    }
+
+    /* ---------- Thermometer drawing ---------- */
+
+    const SVG_NS = 'http://www.w3.org/2000/svg';
+
+    function levelToY(fraction) {
+        const clamped = Math.max(0, Math.min(1, fraction));
+        return SCALE_BOTTOM - clamped * (SCALE_BOTTOM - SCALE_TOP);
+    }
+
+    function drawTicks(goal) {
+        const ticks = $('ticks');
+        // One style of label for the whole scale, so 14.4K never sits above 7,195.
+        const abbreviate = goal >= 10000;
+        while (ticks.firstChild) ticks.removeChild(ticks.firstChild);
+
+        const marks = [
+            { fraction: 0, major: true },
+            { fraction: 0.125, major: false },
+            { fraction: 0.25, major: true },
+            { fraction: 0.375, major: false },
+            { fraction: 0.5, major: true },
+            { fraction: 0.625, major: false },
+            { fraction: 0.75, major: true },
+            { fraction: 0.875, major: false },
+            { fraction: 1, major: true }
+        ];
+
+        marks.forEach(mark => {
+            const y = levelToY(mark.fraction);
+            const line = document.createElementNS(SVG_NS, 'line');
+            line.setAttribute('x1', String(mark.major ? TUBE_LEFT - 22 : TUBE_LEFT - 12));
+            line.setAttribute('x2', String(TUBE_LEFT - 2));
+            line.setAttribute('y1', String(y));
+            line.setAttribute('y2', String(y));
+            if (mark.major) line.setAttribute('class', 'major');
+            ticks.appendChild(line);
+
+            if (!mark.major) return;
+            const label = document.createElementNS(SVG_NS, 'text');
+            label.setAttribute('x', String(TUBE_LEFT - 30));
+            label.setAttribute('y', String(y + 6));
+            label.setAttribute('class', 'major');
+            label.textContent = abbreviate
+                ? formatCompact(goal * mark.fraction)
+                : Math.round(goal * mark.fraction).toLocaleString();
+            ticks.appendChild(label);
+        });
+    }
+
+    function paintLevel(fraction, percent, exceeded) {
+        const level = levelToY(fraction);
+        const top = exceeded ? DOME_TOP : level;
+        const fill = $('fill');
+        fill.setAttribute('y', String(top));
+        fill.setAttribute('height', String(Math.max(0, SCALE_BOTTOM + 40 - top)));
+
+        $('pointer').setAttribute('transform', 'translate(0,' + level.toFixed(1) + ')');
+        $('pointer-label').textContent = Math.min(100, Math.round(percent)) + '%';
+        $('pointer-plus').textContent = exceeded ? '+' : '';
+        $('bar-fill').style.width = Math.max(0, Math.min(100, percent)) + '%';
+        $('bar').setAttribute('aria-valuenow', String(Math.round(percent)));
+        document.querySelector('.gauge').classList.toggle('reached', percent >= 100);
+    }
+
+    /* ---------- Animation ---------- */
+
+    let animationHandle = null;
+    let shownAmount = 0;
+
+    function animateTo(amount, goal) {
+        const start = shownAmount;
+        const change = amount - start;
+        const duration = Math.abs(change) < 1e-8 ? 0 : 900;
+        const startedAt = performance.now();
+        const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (animationHandle) cancelAnimationFrame(animationHandle);
+
+        const paint = value => {
+            shownAmount = value;
+            const percent = goal > 0 ? (value / goal) * 100 : 0;
+            $('raised').textContent = formatRvn(value);
+            paintLevel(goal > 0 ? value / goal : 0, percent, goal > 0 && value > goal);
+        };
+
+        if (duration === 0 || reduceMotion || document.hidden) {
+            paint(amount);
+            return;
+        }
+
+        const step = now => {
+            const progress = Math.min(1, (now - startedAt) / duration);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            paint(start + change * eased);
+            if (progress < 1) animationHandle = requestAnimationFrame(step);
+        };
+        animationHandle = requestAnimationFrame(step);
+    }
+
+    /* ---------- Clipboard ---------- */
+
+    function copyWithSelection(text) {
+        return new Promise((resolve, reject) => {
+            const field = document.createElement('textarea');
+            field.value = text;
+            field.setAttribute('readonly', '');
+            field.style.position = 'fixed';
+            field.style.top = '0';
+            field.style.opacity = '0';
+            document.body.appendChild(field);
+            field.select();
+            field.setSelectionRange(0, text.length);
+            let ok = false;
+            try { ok = document.execCommand && document.execCommand('copy'); } catch (error) { ok = false; }
+            document.body.removeChild(field);
+            ok ? resolve() : reject(new Error('Copy failed'));
+        });
+    }
+
+    function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text).catch(() => copyWithSelection(text));
+        }
+        return copyWithSelection(text);
+    }
+
+    /** Last resort: highlight the text so the reader can copy it by hand. */
+    function selectElement(element) {
+        const selection = window.getSelection();
+        if (!selection) return;
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+
+    function flashButton(button, message) {
+        const original = button.dataset.label || button.textContent;
+        button.dataset.label = original;
+        button.textContent = message;
+        clearTimeout(Number(button.dataset.timer));
+        button.dataset.timer = String(setTimeout(() => { button.textContent = original; }, 1800));
+    }
+
+    /* ---------- Authorization list (ravencoin.foundation only) ---------- */
+
+    /** Reads `foundation_authorized`: one "<address>, <amount>" per line, # starts a comment. */
+    function loadAuthorizedList() {
+        return fetch(new URL(AUTHORIZED_LIST, window.location.href).href, { cache: 'no-cache' })
+            .then(response => {
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                return response.text();
+            })
+            .then(text => {
+                // A server that answers a missing file with an HTML error page must not
+                // be mistaken for an empty, valid list.
+                if (/^\s*</.test(text)) throw new Error('Authorization list is not readable');
+                return text.split(/\r?\n/)
+                    .map(line => line.trim())
+                    .filter(line => line && line.charAt(0) !== '#')
+                    .map(line => {
+                        const comma = line.indexOf(',');
+                        if (comma < 0) return null;
+                        return {
+                            address: line.slice(0, comma).trim(),
+                            amount: parseAmount(line.slice(comma + 1))
+                        };
+                    })
+                    .filter(entry => entry && entry.address && entry.amount !== null);
+            });
+    }
+
+    function isAuthorized(entries, address, goal) {
+        return entries.some(entry => entry.address === address && Math.abs(entry.amount - goal) < 1e-8);
+    }
+
+    function startGate(config, listUnreadable) {
+        document.title = 'Authorization required · Ravencoin Foundation';
+        $('gate').hidden = false;
+        $('gate-address').textContent = config.address;
+        $('gate-goal').textContent = formatRvn(config.goal) + ' RVN';
+        if (listUnreadable) {
+            $('gate-message').textContent = 'Fundraisers hosted on ravencoin.foundation have to be approved before ' +
+                'they can collect, and the authorized list could not be read just now — so nothing is being shown.';
+        }
+    }
+
+    /* ---------- Campaign page ---------- */
+
+    function startCampaign(config) {
+        document.title = config.reason + ' · Ravencoin Fundraiser';
+        $('campaign').hidden = false;
+
+        $('reason').textContent = config.reason;
+        $('tagline').textContent = config.mode === 'balance'
+            ? 'Every RVN held at the address below fills the gauge.'
+            : 'Every RVN sent to the address below fills the gauge.';
+        $('goal').textContent = formatRvn(config.goal);
+        $('address').textContent = config.address;
+        $('explorer').href = EXPLORER + encodeURIComponent(config.address);
+
+        drawTicks(config.goal);
+        paintLevel(0, 0);
+
+        try {
+            $('qr').innerHTML = window.QR.toSvg('ravencoin:' + config.address);
+        } catch (error) {
+            $('qr').remove();
+        }
+
+        $('copy').addEventListener('click', () => {
+            copyText(config.address)
+                .then(() => flashButton($('copy'), 'Copied ✓'))
+                .catch(() => {
+                    selectElement($('address'));
+                    flashButton($('copy'), 'Select and copy');
+                });
+        });
+
+        let lastUpdate = null;
+
+        function showStatus(message, isError) {
+            $('status').textContent = message;
+            $('status').parentElement.classList.toggle('error', Boolean(isError));
+        }
+
+        function showAge() {
+            if (lastUpdate) showStatus('Updated ' + formatAge(Date.now() - lastUpdate), false);
+        }
+
+        async function update() {
+            const button = $('refresh');
+            button.disabled = true;
+            try {
+                const totals = await fetchTotals(config.rpc, config.address);
+                const raised = config.mode === 'balance' ? totals.balance : totals.received;
+
+                animateTo(raised, config.goal);
+
+                const remaining = config.goal - raised;
+                $('remaining').textContent = remaining > 0
+                    ? ' · ' + formatRvn(remaining) + ' to go'
+                    : '';
+                $('cheer').hidden = remaining > 0;
+
+                if (totals.pending > 0) {
+                    $('pending').textContent = '+' + formatRvn(totals.pending) + ' RVN waiting to confirm';
+                    $('pending').hidden = false;
+                } else {
+                    $('pending').hidden = true;
+                }
+
+                $('gauge-caption').textContent = 'Fundraising thermometer: ' + formatRvn(raised) +
+                    ' of ' + formatRvn(config.goal) + ' RVN raised, ' +
+                    Math.round(config.goal > 0 ? (raised / config.goal) * 100 : 0) + ' percent.';
+
+                lastUpdate = Date.now();
+                showAge();
+            } catch (error) {
+                const badAddress = /invalid address/i.test(error && error.message);
+                showStatus(badAddress
+                    ? 'That is not a valid Ravencoin mainnet address'
+                    : lastUpdate
+                        ? 'Network hiccup — showing the last known total'
+                        : 'Could not reach the Ravencoin network', true);
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        $('refresh').addEventListener('click', update);
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && lastUpdate && Date.now() - lastUpdate > REFRESH_MS) update();
+        });
+        setInterval(() => { if (!document.hidden) update(); }, REFRESH_MS);
+        setInterval(showAge, 30000);
+
+        update();
+    }
+
+    /* ---------- Setup page ---------- */
+
+    function startSetup(prefill) {
+        document.title = 'Build a fundraising thermometer · Ravencoin';
+        $('setup').hidden = false;
+
+        const reason = $('f-reason');
+        const goal = $('f-goal');
+        const address = $('f-addr');
+
+        reason.value = prefill.reason || '';
+        goal.value = prefill.goal || '';
+        address.value = prefill.address || '';
+
+        function buildLink() {
+            const base = window.location.origin === 'null'
+                ? window.location.href.split('?')[0]
+                : window.location.origin + window.location.pathname;
+            const query = new URLSearchParams();
+            query.set('rvn', (parseAmount(goal.value) || DEFAULT_GOAL).toString());
+            query.set('addr', address.value.trim());
+            if (reason.value.trim()) query.set('reason', reason.value.trim());
+            const link = base + '?' + query.toString();
+            const usable = ADDRESS_PATTERN.test(address.value.trim());
+            $('f-link').textContent = link;
+            $('f-hint').hidden = usable;
+            $('f-open').href = usable ? link : '#';
+            $('f-open').setAttribute('aria-disabled', usable ? 'false' : 'true');
+            return link;
+        }
+
+        [reason, goal, address].forEach(field => field.addEventListener('input', buildLink));
+        $('setup-form').addEventListener('submit', event => {
+            event.preventDefault();
+            if (ADDRESS_PATTERN.test(address.value.trim())) window.location.href = buildLink();
+            else address.focus();
+        });
+        $('f-copy').addEventListener('click', () => {
+            copyText(buildLink())
+                .then(() => flashButton($('f-copy'), 'Copied ✓'))
+                .catch(() => {
+                    selectElement($('f-link'));
+                    flashButton($('f-copy'), 'Select and copy');
+                });
+        });
+
+        buildLink();
+    }
+
+    /* ---------- Boot ---------- */
+
+    const params = readParams();
+    const address = unquote(params.addr || params.address || '');
+    const reason = unquote(params.reason || params.why || '') || 'Community fundraiser';
+    const goal = parseAmount(params.rvn || params.goal || '') || DEFAULT_GOAL;
+    const endpoint = /^https?:\/\//i.test(unquote(params.rpc || '')) ? unquote(params.rpc) : DEFAULT_RPC;
+    const mode = unquote(params.mode || '').toLowerCase() === 'balance' ? 'balance' : 'received';
+
+    const config = { address, reason, goal, mode, rpc: endpoint };
+
+    if (!ADDRESS_PATTERN.test(address)) {
+        startSetup({ reason: params.reason ? reason : '', goal: params.rvn ? String(goal) : '', address });
+    } else if (!GATED_HOST.test(window.location.hostname)) {
+        startCampaign(config);
+    } else {
+        loadAuthorizedList().then(entries => {
+            if (isAuthorized(entries, address, goal)) startCampaign(config);
+            else startGate(config, false);
+        }).catch(() => startGate(config, true));
+    }
+}());
+</script>
 </body>
 </html>
