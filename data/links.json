@@ -146,7 +146,8 @@
     {"text": "Asset Anatomy", "link": "https://hans-schmidt.github.io/mastering_ravencoin/analysis/Anatomy_of_a_Ravencoin_Asset_Transaction_Script.html"},
     {"text": "Foundation GitHub", "link": "https://github.com/RavencoinFoundation"},
     {"text": "wxRaven (IRE/IDE)", "link": "https://wxraven.link", "status": "unreachable"},
-    {"text": "DevKit", "link": "https://github.com/RavenDevKit"}
+    {"text": "DevKit", "link": "https://github.com/RavenDevKit"},
+    {"text": "Node Monitor", "link": "https://ravencoin-node-monitor.vercel.app/"}
   ],
   "Explorers": [
     {"text": "Block Explorer", "link": "https://api.ravencoin.org/", "status": "unreachable"},
