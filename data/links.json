@@ -5,6 +5,7 @@
     "Asset Wallets": {"icon": "assets", "blurb": "Wallets that can hold Ravencoin assets and NFTs."},
     "RVN Wallets": {"icon": "wallet", "blurb": "Wallets that hold RVN."},
     "Participate": {"icon": "people", "blurb": "Where the community gathers."},
+    "Fundraise": {"icon": "heart", "blurb": "Live fundraising gauges for Ravencoin addresses."},
     "Buy RVN": {"icon": "buy", "blurb": "On-ramps for buying RVN."},
     "Trade": {"icon": "trade", "blurb": "Exchanges listing RVN."},
     "Swap": {"icon": "swap", "blurb": "Instant swap services."},
@@ -49,6 +50,10 @@
     {"text": "RVNFT Art", "link": "https://www.rvnft.art", "status": "unreachable"},
     {"text": "NVRMOR", "link": "https://www.nvrmor.io/"},
     {"text": "Mailing List", "link": "https://ravencoin.org/updates/"}
+  ],
+  "Fundraise": [
+    {"text": "Fundraiser Builder", "link": "/rvn_raise/index.html"},
+    {"text": "Test Fundraise", "link": "/rvn_raise/index.html?rvn=10&addr=RK8B99ffErvpw6irQqT9PcJFDgjDByD77Y&reason=Test+Fundraise"}
   ],
   "Buy RVN": [
     {"text": "Binance", "link": "https://www.binance.com/en"},
