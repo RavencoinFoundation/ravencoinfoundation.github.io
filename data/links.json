@@ -53,7 +53,7 @@
   ],
   "Fundraise": [
     {"text": "Fundraiser Builder", "link": "/rvn_raise/index.html"},
-    {"text": "Bitget", "link": "/rvn_raise/index.html?rvn=12584&addr=RRT3v8uKazr662SdurzZdt5oe7MzvLDqsi&reason=Bitget"},
+    {"text": "Bitget", "link": "/rvn_raise/index.html?rvn=12584&addr=RH7Jfx1oBw1itsVYTqhGRuisA41Aukus5d&reason=Bitget"},
     {"text": "MEXC", "link": "/rvn_raise/index.html?rvn=205179.6106&addr=RCvGY8ZjXCfVotk1hKtmU329mvk3rSQKKT&reason=MEXC"},
     {"text": "Test Fundraise", "link": "/rvn_raise/index.html?rvn=10&addr=RK8B99ffErvpw6irQqT9PcJFDgjDByD77Y&reason=Test+Fundraise"}
   ],
