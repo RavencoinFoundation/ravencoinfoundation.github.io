@@ -134,6 +134,7 @@
     {"text": "Medium (@TronBlack)", "link": "https://medium.com/@tronblack"},
     {"text": "Wiki", "link": "https://raven.wiki/w/Ravencoin_Wiki"},
     {"text": "Chain Stats", "link": "https://rvn.cryptoscope.io/stats/"},
+    {"text": "RVN market comparison (Holder.io)", "link": "https://holder.io/coins/rvn/markets/"},
     {"text": "Ecosystem Status", "link": "https://status.ravencoin.foundation/"},
     {"text": "Ravencoin News", "link": "https://ravencoinnews.net/", "status": "unreachable"},
     {"text": "Privacy", "link": "/privacy/"}
